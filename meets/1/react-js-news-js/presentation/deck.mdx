@@ -1,0 +1,458 @@
+import { LiveCode } from 'mdx-deck-live-code'; 
+import styled from 'styled-components';
+import { Head } from 'mdx-deck';
+
+export { yellow as theme } from 'mdx-deck/themes'
+
+
+import HelloWorld from './HelloWorld';
+
+
+<Head>
+	<title>React JS & React Native Bonn Meetup</title>
+</Head>
+
+<img src="meetup-logo.png" style={{backgroundColor: 'white'}}/>
+
+## React JS & React Native Bonn Meetup
+## #1
+## 04.06.2019
+
+---
+
+# Alexander Thurn
+
+* GF Frontend Solutions GmbH
+* Organisator
+* Entwickler seit 1996
+* React.JS Fanboy
+
+# Christoph Jerolimov
+
+* Freelancer
+* React Native Fanboy
+
+---
+
+# <img src="frontend-solutions-logo.svg"/>
+
+* Dienstleister für Frontend Entwicklung
+  * Frontends
+  * Backends für Frontends :-)
+  * Baukasten UFP
+
+
+* Technologien
+  * React.JS
+  * Java
+  * Docker
+  * ...
+
+---
+
+# Meetup Format
+
+Alle 6 Wochen
+* React- News / Changelog
+* 1-2 Fachvorträge
+
+* Verschiedene Speaker
+* Verschiedene Locations (Bonn)
+
+=> Schreibt mich sehr gerne an ! at@froso.de
+
+---
+
+
+# Themen #1
+
+* React.JS + Native News
+* React.JS Hello World
+* Brainstorming für nächste Meetups
+
+---
+
+# React.JS News
+
+---
+
+
+<img src="kloster.png" style={{backgroundColor: 'white'}}/>
+
+---
+
+# React.JS 16.0 + 16.2
+
+* Änderungen zu 15
+* Neue Features
+* Verbesserungen
+* https://reactjs.org/blog
+
+---
+
+# React.JS 16.0
+
+[26.09.2017](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
+
+arrays + strings
+
+error boundaries
+
+portals
+
+custom dom attributes
+
+---
+
+
+# arrays
+
+React 15
+
+```jsx
+render() {
+	return (
+		<li>First Item</li >
+		<li>Second Item</li >
+		<li>Third Item</li >
+	)
+}
+```
+
+&#8595;
+
+Error
+
+---
+
+# arrays
+
+React 15
+
+```jsx
+render() {
+	return (
+		<div>
+			<li>First Item</li >
+			<li>Second Item</li >
+			<li>Third Item</li >
+		</div>
+	)
+}
+```
+
+---
+
+
+# arrays
+
+React 16.0
+
+```jsx
+render() {
+    return [
+    	<li key="A">First item</li>,
+    	<li key="B">Second item</li>,
+    	<li key="C">Third item</li>,
+  ]
+}
+
+```
+
+---
+
+# strings
+
+React 15
+
+```jsx
+
+render() { 
+	return 'Look, no spans!' 
+}
+```
+
+&#8595;
+
+Error
+
+---
+
+# strings
+
+React 15
+
+```jsx
+
+render() { 
+	return <span>Look, no spans!</span>
+}
+
+
+```
+
+---
+
+# strings
+
+React 16.0
+
+```jsx
+
+render() { 
+	return 'Look, no spans!' 
+}
+
+
+```
+
+---
+
+# error boundaries
+
+React 15
+
+```jsx
+
+render() { 
+	
+	throw new Error('haha')
+
+	return <span>Look, no spans!</span>
+}
+```
+
+&#8595;
+
+Crashes everything
+
+---
+
+
+# error boundaries
+
+React 15
+
+```jsx
+
+render() { 
+	
+	try {
+		throw new Error('haha')
+	} catch( err ) {
+		console.error(err)
+	}
+
+	return <span>Look, no spans!</span>
+}
+```
+
+---
+
+# error boundaries
+
+React 16.0
+
+```jsx
+
+componentDidCatch(error, info) {
+	console.error(error, info)
+}
+
+```
+
+---
+
+
+# error boundaries
+
+React 16.0
+
+```jsx
+
+<ErrorBoundary> 
+	<MyWidget>
+		<MyInnerWidget />
+	<MyWidget> 
+</ErrorBoundary>
+
+```
+---
+
+
+# portals
+
+```jsx
+
+<div style={{width: 100px; overflow: hidden}}>
+	<div> 
+		<MyComponent style={{width: 200px}} />
+	</div>
+</div>
+
+```
+
+---
+
+
+# portals
+
+```jsx
+
+render() {
+	return ReactDOM.createPortal(
+		this.props.children,
+		domNode
+	)
+}
+
+```
+
+---
+
+# portals
+
+```jsx
+
+render() {
+	return ReactDOM.createPortal(
+		<div>Hello I am outside</div>,
+		document.body
+	)
+}
+
+```
+
+---
+
+# custom dom attributes
+
+Passthrough in 16
+
+```jsx
+// Your code: 
+<div mycustomattribute="something" />
+```
+
+```jsx
+// React 15 output: 
+<div />
+```
+
+```jsx
+// React 16 output:
+<div mycustomattribute="something" />
+```
+---
+
+# 16.0 Improvements
+
+* server-side rendering 
+  *  3x faster then react 15
+
+
+* reduced file size (compared to 15)
+  * 109 kb vs. 161.8 kb
+  * ca. 30%
+
+---
+
+# React.JS 16.2
+
+[28.11.2017](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
+
+feature fragments
+
+---
+
+# feature fragments
+
+React 16.0
+
+```jsx
+render() {
+    return [
+		"Some text.",
+		<h2 key="heading-1">A heading</h2>,
+		"More text.",
+		<h2 key="heading-2">Another heading</h2>,
+		"Even more text."
+  ]
+}
+
+```
+
+---
+
+# feature fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<React.Fragment>
+			Some text.
+			<h2 key="heading-1">A heading</h2>
+			More text.
+			<h2 key="heading-2">Another heading</h2>
+			Even more text.
+		</React.Fragment>
+	)
+}
+
+
+```
+
+
+---
+
+# feature fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<>
+			Some text.
+			<h2 key="heading-1">A heading</h2>
+			More text.
+			<h2 key="heading-2">Another heading</h2>
+			Even more text.
+		</>
+	)
+}
+
+
+```
+
+---
+
+# feature fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<dl>
+			{props.items.map(item => (
+				<Fragment key={item.id}>
+					<dt>{item.term}</dt>
+					<dd>{item.description}</dd>
+				</Fragment>
+			))}
+		</dl>
+	)
+}
+
+
+```
+
+---
+
+# Vielen Dank
+
+By [@Alexander Thurn](https://froso.de)
+
