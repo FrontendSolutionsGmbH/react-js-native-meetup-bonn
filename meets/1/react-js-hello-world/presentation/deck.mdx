@@ -1,0 +1,295 @@
+import { LiveCode } from 'mdx-deck-live-code'; 
+import styled from 'styled-components';
+import { Head } from 'mdx-deck';
+
+export { yellow as theme } from 'mdx-deck/themes'
+
+
+import HelloWorld from './HelloWorld';
+
+
+<Head>
+	<title>React.JS Hello World</title>
+</Head>
+
+<!-- <img src="meetup-logo.png" /> -->
+
+# React.JS Hello World(s)
+
+## 04.06.2019
+
+Alexander Thurn
+
+
+---
+
+# Index
+
+* React Components
+* React Render
+* LiveCode
+
+---
+
+# Components
+
+
+```
+
+<div>
+	<h1>This is great</h1>
+	<span> Super </span>
+	<svg id="nice" width="100" height="200"></svg>
+</div>
+
+```
+
+---
+
+
+# Components
+
+
+```
+
+<div>
+	<h1>This is great</h1>
+
+	<HelloWorld name="earth" />
+
+	<WhatToDo>
+		<BeNice />
+		<FeeldGood />
+		<Relax />
+	</WhatToDo>
+
+</div>
+
+```
+
+---
+
+
+# Class Components
+
+```jsx
+<HelloWorld />
+```
+
+```jsx
+
+class HelloWorld {
+
+  componentDidMount() {
+      console.log('hello')
+  }
+
+  render() {
+  	   return <p>Hi, I'm Groot!</p>
+  }
+
+}
+
+```
+
+
+---
+
+# Valid Javascript ?
+
+```jsx
+render() {
+	return <p>Hi, I'm Groot!</p>
+}
+```
+
+---
+
+# JSX + Babel
+
+
+```jsx
+render() {
+	return <p>Hi, I'm Groot!</p>
+}
+```
+
+&#8595;
+
+```jsx
+render() {
+	return React.createElement(
+		'p', 
+		null, 
+		`Hi, I'm Groot!`
+	)
+}
+```
+
+
+---
+
+# Functional Components
+
+```jsx
+<HelloWorld />
+```
+
+```jsx
+
+const HelloWorld = function () { 
+	return <p>Hi, I'm Groot!</p>
+}
+
+```
+
+---
+
+# Arrow Notation
+
+```jsx
+<HelloWorld />
+```
+
+```jsx
+
+const HelloWorld = function () { 
+	return <p>Hi, I'm Groot!</p>
+}
+
+const HelloWorld = () => {
+	return <p>Hi, I'm Groot!</p>
+}
+
+const HelloWorld = () => <p>Hi, I'm Groot!</p>
+
+```
+
+---
+
+# Properties
+
+
+```
+
+<HelloWorld name="groot" />
+
+```
+
+```
+
+function (props) { 
+	return <p>Hi, I'm {props.name}!</p>
+}
+
+(props) => {
+	return <p>Hi, I'm {props.name}!</p>
+}
+
+({name}) => <p>Hi, I'm {name}!</p>
+
+
+```
+
+---
+
+# Render
+
+```html
+<div id="root"></div>
+```
+
+```jsx
+
+import ReactDOM from 'react-dom';
+
+const HelloWorld = ({name}) => <p>Hi, I'm {name}!</p>
+
+ReactDOM.render(<HelloWorld name="froso"/>,
+ document.getElementById('root'));
+
+```
+
+<div style={{ padding: '20px', backgroundColor: 'tomato' }}>
+	<HelloWorld name="froso" />
+</div>
+
+---
+
+# LiveCode
+
+* Online Editor
+* Create React App
+* From Scratch
+
+
+---
+
+# Online Editor
+
+* [CodePen](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)
+* [CodeSandBox](https://codesandbox.io/s/github/eggheadio-projects/start-learning-react/tree/master/lessons/01-react-react-fundamentals-development-environment-setup)
+* [Stackblitz](https://stackblitz.com/)
+* [React Live](https://react-live.kitten.sh/)
+
+---
+
+# Create React App
+
+* [Create React App 2](https://github.com/facebook/create-react-app)
+* [node.js](https://nodejs.org/en/download/) 8 required 
+  * Windows | macOS | Linux | Source
+
+```
+npm init react-app helloworld
+```
+
+---
+
+# From Scratch
+
+* index.html
+
+---
+
+# React CDN Links
+
+```html
+<script crossorigin 
+src="https://unpkg.com/react@16/umd/react.development.js"></script>
+```
+
+```html
+<script crossorigin src="https://unpkg.com/
+react-dom@16/umd/react-dom.development.js"></script>
+```
+
+---
+
+# Babel
+
+```html
+<script type="application/javascript" 
+src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+```
+
+---
+
+# Babel cli
+
+```js
+npm install babel-cli babel babel-plugin-transform-react-jsx
+```
+
+```
+./node_modules/.bin/babel 
+--plugins transform-react-jsx index.jsx
+```
+
+---
+
+# Vielen Dank
+
+By [@Alexander Thurn](https://froso.de)
+
