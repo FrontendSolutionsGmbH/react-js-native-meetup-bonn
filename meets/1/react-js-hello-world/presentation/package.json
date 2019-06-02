@@ -6,7 +6,7 @@
   "scripts": {
     "start": "mdx-deck deck.mdx",
    "pdf": "mdx-deck pdf deck.mdx",
-   "build": "mdx-deck build deck.mdx",
+   "build": "mdx-deck build deck.mdx"
   },
   "keywords": [],
   "author": "",
