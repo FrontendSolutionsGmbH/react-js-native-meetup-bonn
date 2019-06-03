@@ -1,22 +1,18 @@
-import { LiveCode } from 'mdx-deck-live-code'; 
 import styled from 'styled-components';
 import { Head } from 'mdx-deck';
-
-export { yellow as theme } from 'mdx-deck/themes'
-
-
 import HelloWorld from './HelloWorld';
+import Footer from './Footer';
+import CustomLiveCode from './CustomLiveCode.jsx'
 
+export { swiss as theme } from '@mdx-deck/themes'
 
 <Head>
 	<title>React.JS Hello World</title>
 </Head>
 
-<!-- <img src="meetup-logo.png" /> -->
-
 # React.JS Hello World(s)
 
-## 04.06.2019
+04.06.2019
 
 Alexander Thurn
 
@@ -25,7 +21,7 @@ Alexander Thurn
 
 ---
 
-# Hello World
+# Topics
 
 Concepts
 * Components
@@ -35,6 +31,8 @@ Concepts
 &#8595;
 
 Live Coding
+
+<Footer></Footer>
 
 ---
 
@@ -52,8 +50,9 @@ Built In
 
 ```
 
----
+<Footer></Footer>
 
+---
 
 # Components
 
@@ -76,14 +75,13 @@ Custom
 
 ```
 
+<Footer></Footer>
+
 ---
 
 
 # Class Components
 
-```jsx
-<HelloWorld />
-```
 
 ```jsx
 
@@ -101,6 +99,12 @@ class HelloWorld {
 
 ```
 
+```jsx
+<HelloWorld />
+```
+
+
+<Footer></Footer>
 
 ---
 
@@ -111,6 +115,8 @@ render() {
 	return <p>Hi, I'm Groot!</p>
 }
 ```
+
+<Footer></Footer>
 
 ---
 
@@ -135,14 +141,12 @@ render() {
 }
 ```
 
+<Footer></Footer>
 
 ---
 
 # Functional Components
 
-```jsx
-<HelloWorld />
-```
 
 ```jsx
 
@@ -152,13 +156,18 @@ const HelloWorld = function () {
 
 ```
 
+```jsx
+<HelloWorld />
+```
+
+
+<Footer></Footer>
+
+
 ---
 
 # Arrow Notation
 
-```jsx
-<HelloWorld />
-```
 
 ```jsx
 
@@ -174,16 +183,15 @@ const HelloWorld = () => <p>Hi, I'm Groot!</p>
 
 ```
 
+```jsx
+<HelloWorld />
+```
+
+<Footer></Footer>
+
 ---
 
 # Properties
-
-
-```
-
-<HelloWorld name="groot" />
-
-```
 
 ```
 
@@ -200,13 +208,17 @@ function (props) {
 
 ```
 
+```
+<HelloWorld name="groot" />
+
+```
+
+<Footer></Footer>
+
 ---
 
 # Render
 
-```html
-<div id="root"></div>
-```
 
 ```jsx
 
@@ -219,9 +231,18 @@ ReactDOM.render(<HelloWorld name="froso"/>,
 
 ```
 
+```html
+<div
+    style={{ padding: '20px', backgroundColor: 'tomato' }
+    id='root'
+/>
+```
+
 <div style={{ padding: '20px', backgroundColor: 'tomato' }}>
 	<HelloWorld name="froso" />
 </div>
+
+<Footer></Footer>
 
 ---
 
@@ -232,6 +253,8 @@ ReactDOM.render(<HelloWorld name="froso"/>,
 * From Scratch
 
 
+<Footer></Footer>
+
 ---
 
 # Online Editor
@@ -240,6 +263,18 @@ ReactDOM.render(<HelloWorld name="froso"/>,
 * [CodeSandBox](https://codesandbox.io/s/github/eggheadio-projects/start-learning-react/tree/master/lessons/01-react-react-fundamentals-development-environment-setup)
 * [Stackblitz](https://stackblitz.com/)
 * [React Live](https://react-live.kitten.sh/)
+
+<Footer></Footer>
+
+---
+
+<CustomLiveCode title={'react-live'} code={`() => {
+  const name = "Functional Component";
+  return (<p>Hi, I'm {name}!</p>)
+}`
+}>
+
+</CustomLiveCode>
 
 ---
 
@@ -253,11 +288,15 @@ ReactDOM.render(<HelloWorld name="froso"/>,
 npm init react-app helloworld
 ```
 
+<Footer></Footer>
+
 ---
 
 # From Scratch
 
-* index.html
+* [index.html](./babel.html)
+
+<Footer></Footer>
 
 ---
 
@@ -273,6 +312,8 @@ src="https://unpkg.com/react@16/umd/react.development.js"></script>
 react-dom@16/umd/react-dom.development.js"></script>
 ```
 
+<Footer></Footer>
+
 ---
 
 # Babel
@@ -282,6 +323,8 @@ react-dom@16/umd/react-dom.development.js"></script>
 src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 ```
+
+<Footer></Footer>
 
 ---
 
@@ -296,9 +339,14 @@ npm install babel-cli babel babel-plugin-transform-react-jsx
 --plugins transform-react-jsx index.jsx
 ```
 
+<Footer></Footer>
+
 ---
 
 # Vielen Dank
 
 By [@Alexander Thurn](https://froso.de)
+
+
+<Footer></Footer>
 
