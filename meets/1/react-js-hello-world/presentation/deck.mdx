@@ -16,21 +16,20 @@ export { swiss as theme } from '@mdx-deck/themes'
 
 Alexander Thurn
 
-<img src="frontend-solutions-logo.svg" width="50%"/>
-
+<Footer></Footer>
 
 ---
 
 # Topics
 
-Concepts
-* Components
-* JSX
-* React Render
+* React concepts
+  * Components
+  * JSX
+  * Rendering
 
 &#8595;
 
-Live Coding
+* Live Coding
 
 <Footer></Footer>
 
@@ -61,13 +60,12 @@ Custom
 ```
 
 <div>
-	<h1>This is great</h1>
 
 	<HelloWorld name="earth" />
 
 	<WhatToDo>
 		<BeNice />
-		<FeeldGood />
+		<FeelGood />
 		<Relax />
 	</WhatToDo>
 
@@ -85,7 +83,9 @@ Custom
 
 ```jsx
 
-class HelloWorld {
+import React from 'react';
+
+class HelloWorld extends React.Component {
 
   componentDidMount() {
       console.log('hello')
@@ -108,7 +108,7 @@ class HelloWorld {
 
 ---
 
-# Valid Javascript ?
+# Valid Javascript?
 
 ```jsx
 render() {
@@ -119,6 +119,18 @@ render() {
 <Footer></Footer>
 
 ---
+
+
+# Nope
+
+```jsx
+Unexpected token <
+```
+
+<Footer></Footer>
+
+---
+
 
 # JSX + Babel
 
@@ -194,6 +206,11 @@ const HelloWorld = () => <p>Hi, I'm Groot!</p>
 # Properties
 
 ```
+<HelloWorld name="groot" />
+
+```
+
+```
 
 function (props) { 
 	return <p>Hi, I'm {props.name}!</p>
@@ -208,11 +225,6 @@ function (props) {
 
 ```
 
-```
-<HelloWorld name="groot" />
-
-```
-
 <Footer></Footer>
 
 ---
@@ -224,29 +236,22 @@ function (props) {
 
 import ReactDOM from 'react-dom';
 
-const HelloWorld = ({name}) => <p>Hi, I'm {name}!</p>
+ReactDOM.render(
+	<HelloWorld name="FroSo" />,
+ 	document.getElementById('root')
+);
 
-ReactDOM.render(<HelloWorld name="froso"/>,
- document.getElementById('root'));
-
-```
-
-```html
-<div
-    style={{ padding: '20px', backgroundColor: 'tomato' }
-    id='root'
-/>
 ```
 
 <div style={{ padding: '20px', backgroundColor: 'tomato' }}>
-	<HelloWorld name="froso" />
+	<HelloWorld name="FroSo" />
 </div>
 
 <Footer></Footer>
 
 ---
 
-# LiveCode
+# Live Code
 
 * Online Editor
 * Create React App
@@ -304,12 +309,14 @@ npm init react-app helloworld
 
 ```html
 <script crossorigin 
-src="https://unpkg.com/react@16/umd/react.development.js"></script>
+src="https://unpkg.com/react@16/umd/react.development.js">
+</script>
 ```
 
 ```html
 <script crossorigin src="https://unpkg.com/
-react-dom@16/umd/react-dom.development.js"></script>
+react-dom@16/umd/react-dom.development.js">
+</script>
 ```
 
 <Footer></Footer>
@@ -320,7 +327,8 @@ react-dom@16/umd/react-dom.development.js"></script>
 
 ```html
 <script type="application/javascript" 
-src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+src="https://unpkg.com/babel-standalone@6.26.0/babel.js">
+</script>
 
 ```
 
@@ -328,7 +336,7 @@ src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 
 ---
 
-# Babel cli
+# Babel Cli
 
 ```js
 npm install babel-cli babel babel-plugin-transform-react-jsx
@@ -343,10 +351,11 @@ npm install babel-cli babel babel-plugin-transform-react-jsx
 
 ---
 
-# Vielen Dank
+# Thank you for your attention
 
 By [@Alexander Thurn](https://froso.de)
 
+Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
 
 <Footer></Footer>
 
