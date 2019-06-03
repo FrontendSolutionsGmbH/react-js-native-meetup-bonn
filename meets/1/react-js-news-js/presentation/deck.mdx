@@ -17,15 +17,15 @@ export { swiss as theme } from 'mdx-deck/themes'
 
 # Alexander Thurn
 
-* GF Frontend Solutions GmbH
-* Organisator
-* Entwickler seit 1996
-* React.JS Fanboy
+* CEO Frontend Solutions GmbH
+* Developer since 1996
+* Meetup organizer
+* React.JS fan
 
 # Christoph Jerolimov
 
 * Freelancer
-* React Native Fanboy
+* React Native fan
 
 <Footer></Footer>
 
@@ -33,13 +33,13 @@ export { swiss as theme } from 'mdx-deck/themes'
 
 # <img src="frontend-solutions-logo.svg"/>
 
-* Dienstleister für Frontend Entwicklung
+* Serviceprovider for Frontend Development
   * Frontends
-  * Backends für Frontends :-)
-  * Baukasten UFP
+  * Backends for frontends :-)
+  * Development kit UFP
 
 
-* Technologien
+* Technologies
   * React.JS
   * Java
   * Docker
@@ -49,26 +49,26 @@ export { swiss as theme } from 'mdx-deck/themes'
 
 ---
 
-# Meetup Format
+# Meetup plan
 
-Alle 6 Wochen
-* React- News / Changelog
-* 1-2 Fachvorträge
+Every 6 weeks
+* React News
+* 1-2 lectures
 
-* Verschiedene Speaker
-* Verschiedene Locations (Bonn)
+* Various speakers
+* Various locations (Bonn)
 
-=> Schreibt mich sehr gerne an ! at@froso.de
+=> Contact me if you want to support! at@froso.de
 
 <Footer></Footer>
 
 ---
 
-# Themen #1
+# Topics for today
 
 * React.JS + Native News
 * React.JS Hello World
-* Brainstorming für nächste Meetups
+* Brainstorming for upcoming meetups
 
 <Footer></Footer>
 
@@ -88,9 +88,9 @@ Alle 6 Wochen
 
 # React.JS 16.0 + 16.2
 
-* Änderungen zu 15
-* Neue Features
-* Verbesserungen
+* Changes to React 15.X
+* New features
+* Improvements
 * https://reactjs.org/blog
 
 <Footer></Footer>
@@ -101,28 +101,25 @@ Alle 6 Wochen
 
 [26.09.2017](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
 
-arrays + strings
-
-error boundaries
-
-portals
-
-custom dom attributes
+* Arrays + Strings
+* Error Boundaries
+* Portals
+* Custom Dom Attributes
 
 <Footer></Footer>
 
 ---
 
-# arrays
+# Arrays
 
-React 15
+React 15.X
 
 ```jsx
 render() {
 	return (
-		<li>First Item</li >
-		<li>Second Item</li >
-		<li>Third Item</li >
+		<li>First Item</li>
+		<li>Second Item</li>
+		<li>Third Item</li>
 	)
 }
 ```
@@ -135,17 +132,17 @@ Error
 
 ---
 
-# arrays
+# Arrays
 
-React 15
+React 15.X
 
 ```jsx
 render() {
 	return (
 		<div>
-			<li>First Item</li >
-			<li>Second Item</li >
-			<li>Third Item</li >
+			<li>First Item</li>
+			<li>Second Item</li>
+			<li>Third Item</li>
 		</div>
 	)
 }
@@ -155,7 +152,7 @@ render() {
 
 ---
 
-# arrays
+# Arrays
 
 React 16.0
 
@@ -164,7 +161,7 @@ render() {
     return [
     	<li key="A">First item</li>,
     	<li key="B">Second item</li>,
-    	<li key="C">Third item</li>,
+    	<li key="C">Third item</li>
   ]
 }
 
@@ -174,9 +171,9 @@ render() {
 
 ---
 
-# strings
+# Strings
 
-React 15
+React 15.X
 
 ```jsx
 
@@ -193,9 +190,9 @@ Error
 
 ---
 
-# strings
+# Strings
 
-React 15
+React 15.X
 
 ```jsx
 
@@ -210,7 +207,7 @@ render() {
 
 ---
 
-# strings
+# Strings
 
 React 16.0
 
@@ -227,9 +224,9 @@ render() {
 
 ---
 
-# error boundaries
+# Error Boundaries
 
-React 15
+React 15.X
 
 ```jsx
 
@@ -249,9 +246,9 @@ Crashes everything
 
 ---
 
-# error boundaries
+# Error Boundaries
 
-React 15
+React 15.X
 
 ```jsx
 
@@ -259,7 +256,7 @@ render() {
 	
 	try {
 		throw new Error('haha')
-	} catch( err ) {
+	} catch(err) {
 		console.error(err)
 	}
 
@@ -271,7 +268,7 @@ render() {
 
 ---
 
-# error boundaries
+# Error Boundaries
 
 React 16.0
 
@@ -287,7 +284,7 @@ componentDidCatch(error, info) {
 
 ---
 
-# error boundaries
+# Error Boundaries
 
 React 16.0
 
@@ -296,7 +293,7 @@ React 16.0
 <ErrorBoundary> 
 	<MyWidget>
 		<MyInnerWidget />
-	<MyWidget> 
+	</MyWidget> 
 </ErrorBoundary>
 
 ```
@@ -304,14 +301,12 @@ React 16.0
 
 ---
 
-# portals
+# Portals
 
 ```jsx
 
-<div style={{width: 100px; overflow: hidden}}>
-	<div> 
-		<MyComponent style={{width: 200px}} />
-	</div>
+<div style={{overflow: hidden}}>
+	<MyComponent style={{width: '200px'}} />
 </div>
 
 ```
@@ -320,7 +315,7 @@ React 16.0
 
 ---
 
-# portals
+# Portals
 
 ```jsx
 
@@ -337,7 +332,7 @@ render() {
 
 ---
 
-# portals
+# Portals
 
 ```jsx
 
@@ -354,9 +349,9 @@ render() {
 
 ---
 
-# custom dom attributes
+# Custom Dom Attributes
 
-Passthrough in 16
+Passthrough in 16.0
 
 ```jsx
 // Your code: 
@@ -364,12 +359,12 @@ Passthrough in 16
 ```
 
 ```jsx
-// React 15 output: 
+// React 15.X output: 
 <div />
 ```
 
 ```jsx
-// React 16 output:
+// React 16.0 output:
 <div mycustomattribute="something" />
 ```
 
@@ -379,11 +374,11 @@ Passthrough in 16
 
 # 16.0 Improvements
 
-* server-side rendering 
-  *  3x faster then react 15
+* Server-side rendering
+  *  3x faster than React 15.X
 
 
-* reduced file size (compared to 15)
+* Reduced file size (compared to 15.X)
   * 109 kb vs. 161.8 kb
   * ca. 30%
 
@@ -395,25 +390,25 @@ Passthrough in 16
 
 [28.11.2017](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
 
-feature fragments
+Feature Fragments
 
 <Footer></Footer>
 
 ---
 
-# feature fragments
+# Feature Fragments
 
 React 16.0
 
 ```jsx
 render() {
-    return [
+	return [
 		"Some text.",
 		<h2 key="heading-1">A heading</h2>,
 		"More text.",
 		<h2 key="heading-2">Another heading</h2>,
 		"Even more text."
-  ]
+	]
 }
 
 ```
@@ -422,7 +417,7 @@ render() {
 
 ---
 
-# feature fragments
+# Feature Fragments
 
 React 16.2
 
@@ -446,7 +441,7 @@ render() {
 
 ---
 
-# feature fragments
+# Feature Fragments
 
 React 16.2
 
@@ -470,7 +465,7 @@ render() {
 
 ---
 
-# feature fragments
+# Feature Fragments
 
 React 16.2
 
@@ -495,13 +490,10 @@ render() {
 
 ---
 
-# Vielen Dank
+# Thank you for your attention
 
 By [@Alexander Thurn](https://froso.de)
 
 Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
 
 <Footer></Footer>
-
----
-
