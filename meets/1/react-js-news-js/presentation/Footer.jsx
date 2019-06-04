@@ -4,7 +4,8 @@ export default () => (
     position: 'absolute',
     right: 0,
     bottom: 0,
-    width: '50%'
+    width: '50%',
+    maxWidth: '1024px'
     }} />
   </div>
 )
