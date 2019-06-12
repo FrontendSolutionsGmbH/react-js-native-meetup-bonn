@@ -1,0 +1,503 @@
+import { Head } from 'mdx-deck';
+import Footer from './Footer';
+export { swiss as theme } from 'mdx-deck/themes'
+import './slides.css'
+
+<Head>
+	<title>React News</title>
+</Head>
+
+<div className="meetup-title">
+    <span className="meetup-title-text">React </span>
+    <span className="meetup-title-text"> News</span>
+    <img className="meetup-title-logo" src="meetup-logo.png"/>
+</div>
+
+## #2&nbsp;-&nbsp;09.07.2019
+
+<Footer></Footer>
+
+---
+
+# Alexander Thurn
+
+* CEO Frontend Solutions GmbH
+* Developer since 1996
+* Meetup organizer
+* React.JS fan
+
+# Christoph Jerolimov
+
+* Freelancer
+* React Native fan
+
+<Footer></Footer>
+
+---
+
+# <img src="frontend-solutions-logo.svg"/>
+
+* Serviceprovider for Frontend Development
+  * Frontends
+  * Backends for frontends :-)
+  * Development kit UFP
+
+
+* Technologies
+  * React.JS
+  * Java
+  * Docker
+  * ...
+
+<Footer></Footer>
+
+---
+
+# Meetup plan
+
+Every 6 weeks
+* React News
+* 1-2 lectures
+
+* Various speakers
+* Various locations (Bonn)
+
+=> Contact me if you want to support! at@froso.de
+
+<Footer></Footer>
+
+---
+
+# Topics for today
+
+* React.JS + Native News
+* React.JS Hello World
+* Brainstorming for upcoming meetups
+
+<Footer></Footer>
+
+---
+
+# React.JS News
+
+<Footer></Footer>
+
+---
+
+<img src="kloster.png" style={{backgroundColor: 'white'}}/>
+
+<Footer></Footer>
+
+---
+
+# React.JS 16.0 + 16.2
+
+* Changes to React 15.X
+* New features
+* Improvements
+* https://reactjs.org/blog
+
+<Footer></Footer>
+
+---
+
+# React.JS 16.0
+
+[26.09.2017](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
+
+* Arrays + Strings
+* Error Boundaries
+* Portals
+* Custom Dom Attributes
+
+<Footer></Footer>
+
+---
+
+# Arrays
+
+React 15.X
+
+```jsx
+render() {
+	return (
+		<li>First Item</li>
+		<li>Second Item</li>
+		<li>Third Item</li>
+	)
+}
+```
+
+&#8595;
+
+Error
+
+<Footer></Footer>
+
+---
+
+# Arrays
+
+React 15.X
+
+```jsx
+render() {
+	return (
+		<div>
+			<li>First Item</li>
+			<li>Second Item</li>
+			<li>Third Item</li>
+		</div>
+	)
+}
+```
+
+<Footer></Footer>
+
+---
+
+# Arrays
+
+React 16.0
+
+```jsx
+render() {
+    return [
+    	<li key="A">First item</li>,
+    	<li key="B">Second item</li>,
+    	<li key="C">Third item</li>
+  ]
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# Strings
+
+React 15.X
+
+```jsx
+
+render() { 
+	return 'Look, no spans!' 
+}
+```
+
+&#8595;
+
+Error
+
+<Footer></Footer>
+
+---
+
+# Strings
+
+React 15.X
+
+```jsx
+
+render() { 
+	return <span>Look, no spans!</span>
+}
+
+
+```
+
+<Footer></Footer>
+
+---
+
+# Strings
+
+React 16.0
+
+```jsx
+
+render() { 
+	return 'Look, no spans!' 
+}
+
+
+```
+
+<Footer></Footer>
+
+---
+
+# Error Boundaries
+
+React 15.X
+
+```jsx
+
+render() { 
+	
+	throw new Error('haha')
+
+	return <span>Look, no spans!</span>
+}
+```
+
+&#8595;
+
+Crashes everything
+
+<Footer></Footer>
+
+---
+
+# Error Boundaries
+
+React 15.X
+
+```jsx
+
+render() { 
+	
+	try {
+		throw new Error('haha')
+	} catch(err) {
+		console.error(err)
+	}
+
+	return <span>Look, no spans!</span>
+}
+```
+
+<Footer></Footer>
+
+---
+
+# Error Boundaries
+
+React 16.0
+
+```jsx
+
+componentDidCatch(error, info) {
+	console.error(error, info)
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# Error Boundaries
+
+React 16.0
+
+```jsx
+
+<ErrorBoundary> 
+	<MyWidget>
+		<MyInnerWidget />
+	</MyWidget> 
+</ErrorBoundary>
+
+```
+<Footer></Footer>
+
+---
+
+# Portals
+
+```jsx
+
+<div style={{overflow: hidden}}>
+	<MyComponent style={{width: '200px'}} />
+</div>
+
+```
+
+<Footer></Footer>
+
+---
+
+# Portals
+
+```jsx
+
+render() {
+	return ReactDOM.createPortal(
+		this.props.children,
+		domNode
+	)
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# Portals
+
+```jsx
+
+render() {
+	return ReactDOM.createPortal(
+		<div>Hello I am outside</div>,
+		document.body
+	)
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# Custom Dom Attributes
+
+Passthrough in 16.0
+
+```jsx
+// Your code: 
+<div mycustomattribute="something" />
+```
+
+```jsx
+// React 15.X output: 
+<div />
+```
+
+```jsx
+// React 16.0 output:
+<div mycustomattribute="something" />
+```
+
+<Footer></Footer>
+
+---
+
+# 16.0 Improvements
+
+* Server-side rendering
+  *  3x faster than React 15.X
+
+
+* Reduced file size (compared to 15.X)
+  * 109 kb vs. 161.8 kb
+  * ca. 30%
+
+<Footer></Footer>
+
+---
+
+# React.JS 16.2
+
+[28.11.2017](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html)
+
+Feature Fragments
+
+<Footer></Footer>
+
+---
+
+# Feature Fragments
+
+React 16.0
+
+```jsx
+render() {
+	return [
+		"Some text.",
+		<h2 key="heading-1">A heading</h2>,
+		"More text.",
+		<h2 key="heading-2">Another heading</h2>,
+		"Even more text."
+	]
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# Feature Fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<React.Fragment>
+			Some text.
+			<h2 key="heading-1">A heading</h2>
+			More text.
+			<h2 key="heading-2">Another heading</h2>
+			Even more text.
+		</React.Fragment>
+	)
+}
+
+
+```
+
+<Footer></Footer>
+
+---
+
+# Feature Fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<>
+			Some text.
+			<h2 key="heading-1">A heading</h2>
+			More text.
+			<h2 key="heading-2">Another heading</h2>
+			Even more text.
+		</>
+	)
+}
+
+
+```
+
+<Footer></Footer>
+
+---
+
+# Feature Fragments
+
+React 16.2
+
+```jsx
+render() {
+	return (
+		<dl>
+			{props.items.map(item => (
+				<Fragment key={item.id}>
+					<dt>{item.term}</dt>
+					<dd>{item.description}</dd>
+				</Fragment>
+			))}
+		</dl>
+	)
+}
+
+
+```
+
+<Footer></Footer>
+
+---
+
+# Thank you for your attention
+
+By [@Alexander Thurn](https://froso.de)
+
+Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
+
+<Footer></Footer>
