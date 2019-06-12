@@ -1,0 +1,21 @@
+.meetup-title-logo  {
+    height: 120px !important;
+}
+
+.meetup-title  {
+    height: 120px;
+    line-height: 120px;
+    vertical-align: center;
+    font-size: 128px;
+}
+
+.meetup-title-logo {
+    position: absolute;
+    -webkit-animation:spin 12s linear infinite;
+    -moz-animation:spin 12s linear infinite;
+    animation:spin 12s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
