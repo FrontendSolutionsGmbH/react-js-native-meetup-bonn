@@ -2,6 +2,10 @@ import { Head } from 'mdx-deck';
 import Footer from './Footer';
 export { swiss as theme } from 'mdx-deck/themes'
 import './slides.css'
+import PointerEvents from './misc/PointerEvents'
+import DeprecatedWillMount from './misc/DeprecatedWillMount'
+
+import React from 'react'
 
 <Head>
 	<title>React.JS News</title>
@@ -37,6 +41,13 @@ import './slides.css'
   * Development kit UFP
 
 
+<Footer></Footer>
+
+
+---
+
+# <img src="frontend-solutions-logo.svg"/>
+
 * Technologies
   * React.JS
   * Java
@@ -47,16 +58,27 @@ import './slides.css'
 
 
 ---
-
 # Topics for today
 
-* React News / Changelog
+* React JS + Native News
+
+
 * React Native
     * Christoph Jerolimov
+
+
 * React Typescript
     * Simon Knott
 
 <Footer></Footer>
+
+---
+
+
+# React.JS News
+
+<Footer></Footer>
+
 
 ---
 
@@ -69,31 +91,253 @@ import './slides.css'
     * forwardRef
     * StrictMode Component
 
+
 * 16.4.0
     * Pointer Events
 
 <Footer></Footer>
 
+
 ---
+
 
 # React.JS 16.3.0
 
-[29.03.2018](https://reactjs.org/blog/2018/03/29/react-v-16-3.html)
+29.03.2018
 
 * Context Api
 * createRef
 * forwardRef
 * StrictMode Component
 
+<small>https://reactjs.org/blog/2018/03/29/react-v-16-3.html</small>
+
 <Footer></Footer>
 
 ---
 
+# Context Api
+
+```jsx
+const ThemeContext = React.createContext('light');
+
+class ThemeProvider extends React.Component {
+    state = {theme: 'light'};
+
+    render() {
+        return (
+            <ThemeContext.Provider value={this.state.theme}>
+                {this.props.children}
+            </ThemeContext.Provider>
+        );
+    }
+}
+```
+
+<Footer></Footer>
+
+---
+
+# Context Api
+
+```jsx
+class ThemedButton extends React.Component {
+    render() {
+        return (
+            <ThemeContext.Consumer>
+                {theme => <Button theme={theme} />}
+            </ThemeContext.Consumer>
+        );
+    }
+}
+
+```
+
+<Footer></Footer>
+
+---
+
+# createRef
+
+```jsx
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.inputRef = React.createRef();
+    }
+
+    render() {
+        return <input type="text" ref={this.inputRef} />;
+    }
+
+    componentDidMount() {
+        this.inputRef.current.focus();
+    }
+}
+
+```
+
+<Footer></Footer>
+
+
+---
+
+# forwardRef
+
+```jsx
+const FancyButton = React.forwardRef((props, ref) => (
+    <button ref={ref} className="FancyButton">
+        {props.children}
+    </button>
+));
+
+// You can now get a ref directly to the DOM button:
+const ref = React.createRef();
+
+<FancyButton ref={ref}>Click me!</FancyButton>;
+
+```
+
+<Footer></Footer>
+
+
+---
+
+# StrictMode
+
+16.3 DEPRECATED:
+
+* componentWillMount
+* componentWillReceiveProps
+* componentWillUpdate
+
+<Footer></Footer>
+
+
+---
+
+# StrictMode
+
+16.3 NEW:
+
+* getDerivedStateFromProps
+* getSnapshotBeforeUpdate
+
+
+<small>https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html</small>
+
+<Footer></Footer>
+
+---
+
+# StrictMode
+
+* 16.3:
+    * UNSAFE_componentWillMount,
+    * UNSAFE_componentWillReceiveProps
+    * UNSAFE_componentWillUpdate
+* 16.X: Deprecation Warning
+* 17.X: Removed support (only UNSAFE will work)
+
+<Footer></Footer>
+
+
+---
+
+# StrictMode
+
+```jsx
+<div>
+    <DeprecatedWillMount title="Example WITHOUT StrictMode"/>
+</div>
+```
+
+<Footer></Footer>
+
+
+---
+
+<div>
+    <DeprecatedWillMount title="Example WITHOUT StrictMode"/>
+</div>
+
+<Footer></Footer>
+
+
+---
+
+# StrictMode
+
+```jsx
+<React.StrictMode>
+    <DeprecatedWillMount title="Example WITH StrictMode"/>
+</React.StrictMode>
+```
+
+<Footer></Footer>
+
+
+---
+
+<React.StrictMode>
+    <DeprecatedWillMount title="Example WITH StrictMode"/>
+</React.StrictMode>
+
+<Footer></Footer>
+
+---
+
+
 # React.JS 16.4.0
 
-[23.05.2018](https://reactjs.org/blog/2018/05/23/react-v-16-4.html)
+23.05.2018
 
 * Pointer Events
+
+https://reactjs.org/blog/2018/05/23/react-v-16-4.html
+
+<Footer></Footer>
+
+---
+
+# Pointer Events
+
+* onPointerDown
+* onPointerMove
+* onPointerUp
+* onPointerCancel
+* onGotPointerCapture
+* onLostPointerCapture
+* onPointerEnter
+* onPointerLeave
+* onPointerOver
+* onPointerOut
+
+<Footer></Footer>
+
+---
+
+# Pointer Events
+
+<PointerEvents />
+
+https://ox5lx949oq.codesandbox.io/
+
+<Footer></Footer>
+
+---
+
+# Pointer Events
+
+Support in the latest versions of
+
+* Chrome
+* Firefox
+* Edge
+* Internet Explorer
+
+=> Use Polyfill
 
 <Footer></Footer>
 
