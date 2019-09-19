@@ -1,0 +1,132 @@
+import { Head, Image, Notes, Appear, Steps } from 'mdx-deck';
+import Counter from './Counter';
+import CustomLiveCode from './CustomLiveCode';
+import Footer from './Footer';
+
+export { swiss as theme } from '@mdx-deck/themes'
+
+<Head>
+	<title>React Hooks</title>
+</Head>
+
+# React Hooks
+
+15.10.2019
+
+Torsten Stelljes
+
+<Footer/>
+
+---
+
+<Counter initialCount={0}/>
+
+---
+
+<CustomLiveCode title={'react-live'} code={`() => {
+  const name = "Functional Component"
+  return (<Footer />)
+}`
+}>
+
+</CustomLiveCode>
+
+---
+
+<CustomLiveCode title={'react-live'} code={`() => {
+    const [count, setCount] = useState(0)
+    return (
+        <>
+            Count: {count}
+            <button onClick={() => setCount(0)}>Reset</button>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+            <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+        </>
+    )
+}`
+}>
+
+</CustomLiveCode>
+
+---
+
+
+```jsx
+import React from 'react'
+
+export default props =>
+  <div style={{ color: 'red' }}>
+    {props.children}
+  </div>
+
+export const Beep = props =>
+  <Hello>
+    {props.children}
+  </Hello>
+
+```
+
+## This is v2
+
+---
+
+## What's New
+
+<ul>
+  <Appear>
+    <li>Reach Router</li>
+    <li>Less opinionated styles</li>
+    <li>more stuff</li>
+  </Appear>
+</ul>
+
+---
+
+<Image
+  src='https://source.unsplash.com/random/1024x768'
+  size='contain'
+/>
+
+---
+
+## This slide has notes
+
+<Notes>
+  Hello, secret speaker notes
+</Notes>
+
+---
+
+```js
+const codeExample = require('./code-example')
+```
+
+---
+
+## More Appear
+
+<Appear>
+  <div>One</div>
+  <div>Two</div>
+  <div>Three</div>
+  <div>Four</div>
+  <div>Five</div>
+  <div>Six</div>
+</Appear>
+
+---
+
+## Steps Components
+
+<Steps
+  length={3}
+  render={({ step }) => (
+    <pre>
+      Step: {step}
+    </pre>
+  )}
+/>
+
+---
+
+## Last Slide
