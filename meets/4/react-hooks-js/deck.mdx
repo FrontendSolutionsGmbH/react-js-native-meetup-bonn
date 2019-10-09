@@ -2,6 +2,11 @@ import { Head, Image, Notes, Appear, Steps } from 'mdx-deck';
 import Counter from './Counter';
 import CustomLiveCode from './CustomLiveCode';
 import Footer from './Footer';
+import FunctionalUpdate from '!raw-loader!./FunctionalUpdate.jsx'
+import Lifecycles from '!raw-loader!./Lifecycles.jsx'
+import Lifecyclestest from 'Lifecyclestest.jsx'
+import SetState from '!raw-loader!./SetState.jsx'
+import UseState from '!raw-loader!./UseState.jsx'
 
 export { swiss as theme } from '@mdx-deck/themes'
 
@@ -19,17 +24,19 @@ Torsten Stelljes
 
 ---
 
-<Counter initialCount={0}/>
+<CustomLiveCode title={'setState'} code={SetState} />
 
 ---
 
-<CustomLiveCode title={'react-live'} code={`() => {
-  const name = "Functional Component"
-  return (<Footer />)
-}`
-}>
+<CustomLiveCode title={'useState'} code={UseState} />
 
-</CustomLiveCode>
+---
+
+<CustomLiveCode title={'life cycles'} code={Lifecycles} />
+
+---
+
+<CustomLiveCode title={'functional update'} code={FunctionalUpdate} />
 
 ---
 
@@ -44,12 +51,16 @@ Torsten Stelljes
         </>
     )
 }`
-}>
-
-</CustomLiveCode>
+} />
 
 ---
 
+<div>
+<Lifecyclestest />
+</div>
+
+
+---
 
 ```jsx
 import React from 'react'
