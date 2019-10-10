@@ -5,12 +5,12 @@ const handleOnKeyDown = (e) => {
     e.stopPropagation();
 }
 
-const CustomLiveCode = ({code, title}) => <div onKeyDown={handleOnKeyDown}>
+const CustomLiveCode = ({code, title, scope}) => <div onKeyDown={handleOnKeyDown}>
     <LiveCode
         title={title}
         size="large"
         code={code}
-        providerProps={{scope: {Component, useEffect, useState}}}
+        providerProps={{scope: {Component, useEffect, useState, ...scope}}}
         editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
     />
 </div>

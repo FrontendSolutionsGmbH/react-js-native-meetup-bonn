@@ -1,12 +1,17 @@
 import { Head, Image, Notes, Appear, Steps } from 'mdx-deck';
 import Counter from './Counter';
+import CustomHook from '!raw-loader!./CustomHook.jsx'
 import CustomLiveCode from './CustomLiveCode';
 import Footer from './Footer';
 import FunctionalUpdate from '!raw-loader!./FunctionalUpdate.jsx'
 import Lifecycles from '!raw-loader!./Lifecycles.jsx'
-import Lifecyclestest from 'Lifecyclestest.jsx'
 import SetState from '!raw-loader!./SetState.jsx'
+import UseEffect from '!raw-loader!./UseEffect.jsx'
+import UseEffectParameters from '!raw-loader!./UseEffectParameters.jsx'
 import UseState from '!raw-loader!./UseState.jsx'
+import useCustomHook from 'useCustomHook.jsx'
+import UseEffecttest from 'UseEffecttest.jsx'
+import CustomHooktest from 'CustomHooktest.jsx'
 
 export { swiss as theme } from '@mdx-deck/themes'
 
@@ -36,7 +41,94 @@ Torsten Stelljes
 
 ---
 
+<CustomLiveCode title={'useEffect'} code={UseEffect} />
+
+---
+
+<CustomLiveCode title={'useEffect parameters'} code={UseEffectParameters} />
+
+---
+
+# subscription with useEffect
+
+```jsx
+import React, {useEffect} from 'react'
+
+const ComponentWithSubscription = () => {
+  // ...
+  useEffect(() => {
+    subscribeToSomething(/*...*/)
+    return () => {
+      unsubscribeFromSomething(/*...*/)
+    }
+  })
+  // ...
+}
+```
+
+---
+
+# subscription with life cycles
+
+```jsx
+import React from 'react'
+
+class ComponentWithSubscription extends React.Component {
+  // ...
+  componentDidMount() {
+    subscribeToSomething(/*...*/)
+  }
+  componentDidUpdate() {
+    subscribeToSomething(/*...*/)
+    unsubscribeFromSomething(/*...*/)
+  }
+  componentDidUnmount() {
+    unsubscribeFromSomething(/*...*/)
+  }
+  // ...
+}
+```
+
+---
+
 <CustomLiveCode title={'functional update'} code={FunctionalUpdate} />
+
+---
+
+# Regeln
+
+* Hooks heißen useSomeName
+* Hooks gibt es nur in funktionalen Komponenten und anderen Hooks
+* Hooks stehen stets auf der obersten Ebene
+
+---
+
+```jsx
+import React, {useEffect, useState} from 'react'
+
+const useCustomHook = interval => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setCount(count => count + 1)
+        }, interval)
+        return () => clearInterval(id);
+    }, []);
+
+    return <p>{count}</p>
+}
+```
+
+---
+
+<CustomLiveCode title={'custom hooks'} code={CustomHook} scope={{useCustomHook}}/>
+
+---
+
+<div>
+<CustomHooktest />
+</div>
 
 ---
 
@@ -52,15 +144,6 @@ Torsten Stelljes
     )
 }`
 } />
-
----
-
-<div>
-<Lifecyclestest />
-</div>
-
-
----
 
 ```jsx
 import React from 'react'

@@ -1,38 +1,28 @@
-class Bla extends Component {
+class Lifecycles extends Component {
     constructor(props) {
         super(props)
-        this.state = {count: 0, name: 'shit', bla: ''}
+        this.state = {countA: 0, countB: 1}
     }
 
-    componentDidMount()
-    {
-
+    componentDidMount() {
+        document.getElementById("bla").innerHTML = 'SUM IS ' + (this.state.countA + this.state.countB)
     }
 
-    componentDidUpdate()
-    {
-    }
-
-    componentWillUnmount()
-    {
+    componentDidUpdate() {
+        document.getElementById("bla").innerHTML = 'SUM IS ' + (this.state.countA + this.state.countB)
     }
 
     render() {
-        let {name} = this.state;
-        return  <div>
-            <form>
-                <input type="text" value={name} onChange={(e) => {this.setState({name: e.target.value})}} />
-                <input type="button" value="Submit" onClick={(event) => {
-                    event.preventDefault()
-                    this.setState({ bla: this.state.name })
-                }} />
-            </form>
-            <p>You clicked {this.state.count} times</p>
-            <button onClick={() => this.setState(function (state) { return {  count: state.count + 1 }})}>
-                Click me
-            </button>
-            <p>{this.state.name}</p>
-            <p>{this.state.bla}</p>
-        </div>
+        return  <>
+            <p id="bla"></p>
+            <p>Counter A clicked {this.state.countA} times</p>
+        <button onClick={() => this.setState({  countA: this.state.countA + 1 })}>
+            Counter A
+        </button>
+        <p>Counter B clicked {this.state.countB} times</p>
+        <button onClick={() => this.setState({  countB: this.state.countB + 1 })}>
+            Counter B
+        </button>
+        </>
     }
 }
