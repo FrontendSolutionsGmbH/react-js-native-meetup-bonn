@@ -1,5 +1,5 @@
 import { LiveCode } from 'mdx-deck-live-code';
-import { Component, useEffect, useState } from 'react';
+import { Component, useEffect, useReducer, useState } from 'react';
 
 const handleOnKeyDown = (e) => {
     e.stopPropagation();
@@ -10,7 +10,7 @@ const CustomLiveCode = ({code, title, scope}) => <div onKeyDown={handleOnKeyDown
         title={title}
         size="large"
         code={code}
-        providerProps={{scope: {Component, useEffect, useState, ...scope}}}
+        providerProps={{scope: {Component, useEffect, useReducer, useState, ...scope}}}
         editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
     />
 </div>

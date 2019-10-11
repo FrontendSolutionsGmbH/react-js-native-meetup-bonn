@@ -9,9 +9,11 @@ import SetState from '!raw-loader!./SetState.jsx'
 import UseEffect from '!raw-loader!./UseEffect.jsx'
 import UseEffectParameters from '!raw-loader!./UseEffectParameters.jsx'
 import UseState from '!raw-loader!./UseState.jsx'
-import useCustomHook from 'useCustomHook.jsx'
+import useCustomHook from 'UseCustomHook.jsx'
 import UseEffecttest from 'UseEffecttest.jsx'
 import CustomHooktest from 'CustomHooktest.jsx'
+import CustomHooktest2 from 'CustomHooktest2.jsx'
+import UseReducertest from 'UseReducertest.jsx'
 
 export { swiss as theme } from '@mdx-deck/themes'
 
@@ -103,9 +105,9 @@ class ComponentWithSubscription extends React.Component {
 
 ---
 
-```jsx
-import React, {useEffect, useState} from 'react'
+# a custom hook to be used
 
+```jsx
 const useCustomHook = interval => {
     const [count, setCount] = useState(0)
 
@@ -127,7 +129,38 @@ const useCustomHook = interval => {
 ---
 
 <div>
+<UseReducertest />
+</div>
+
+---
+
+# lazy initialization
+
+```jsx
+const UseStateWithLazyInitialization = () => {
+  const [state, setState] = useState(initFunction)
+  // ...
+}
+
+const UseRenderWithLazyInitialization = () => {
+  const [state, setState] = useState(initFunction,initParameter)
+  // ...
+}
+```
+<div>
+<LazyInitialization />
+</div>
+
+---
+
+<div>
 <CustomHooktest />
+</div>
+
+---
+
+<div>
+<CustomHooktest2 />
 </div>
 
 ---

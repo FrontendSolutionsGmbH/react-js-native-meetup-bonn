@@ -1,0 +1,54 @@
+import React, {useReducer} from 'react'
+
+const UseReducertest = () => {
+    const [number, dispatch] = useReducer(numberReducer, [0]);
+
+    function add(number) {
+        dispatch({ type: 'add', number })
+    }
+
+    function circumference() {
+        dispatch({ type: 'circumference' })
+    }
+
+    function area() {
+        dispatch({ type: 'area' })
+    }
+
+    function undo() {
+        dispatch({ type: 'undo' })
+    }
+
+    return <>
+        <p>Number: {number[number.length-1]}</p>
+        <button onClick={() => add(1)}>
+            +1
+        </button>
+        <button onClick={() => circumference()}>
+            CIRC
+        </button>
+        <button onClick={() => area()}>
+            AREA
+        </button>
+        <button onClick={() => undo()}>
+            UNDO
+        </button>
+    </>
+}
+
+function numberReducer(state, action) {
+    switch (action.type) {
+        case 'add':
+            return [... state, state[state.length-1] + action.number]
+        case 'circumference':
+            return [... state, 2 * state[state.length-1] * Math.PI]
+        case 'area':
+            return [... state, Math.pow(state[state.length-1],2) * Math.PI]
+        case 'undo':
+            return [...state.slice(0,state.length-1)]
+        default:
+            return state
+    }
+}
+
+export default UseReducertest

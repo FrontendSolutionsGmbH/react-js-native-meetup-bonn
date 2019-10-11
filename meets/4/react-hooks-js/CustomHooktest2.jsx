@@ -1,22 +1,20 @@
 import React, {useEffect, useState} from 'react'
 
 const customHooktest = () => {
-    const count = useCustomHook(1000)
-
-    return <p>{count}</p>
+    return <UseCustomHookComponent interval={1000}/>
 }
 
-const useCustomHook = interval => {
+const UseCustomHookComponent = props => {
     const [count, setCount] = useState(0)
 
     useEffect(() => {
         const id = setInterval(() => {
             setCount(count => count + 1)
-        }, interval)
+        }, props.interval)
         return () => clearInterval(id);
     }, []);
 
-    return count
+    return <p>{count}</p>
 }
 
 export default customHooktest

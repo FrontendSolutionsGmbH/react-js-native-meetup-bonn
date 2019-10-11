@@ -10,7 +10,7 @@ const useCustomHook = interval => {
         return () => clearInterval(id);
     }, []);
 
-    return <p>{count}</p>
+    return count
 }
 
 export default useCustomHook
