@@ -4,7 +4,7 @@ import Button from 'Button.jsx'
 import Input from 'Input.jsx'
 
 const handleOnKeyDown = (e) => {
-    e.stopPropagation();
+    e.stopPropagation()
 }
 
 const CustomLiveCode = ({code, title, scope}) => <div onKeyDown={handleOnKeyDown}>

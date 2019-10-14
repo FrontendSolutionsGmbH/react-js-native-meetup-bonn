@@ -3,19 +3,19 @@ import React, {useReducer} from 'react'
 const UseReducertest = () => {
     const [number, dispatch] = useReducer(numberReducer, [0]);
 
-    function add(number) {
+    const add = number => {
         dispatch({ type: 'add', number })
     }
 
-    function circumference() {
+    const circumference = () => {
         dispatch({ type: 'circumference' })
     }
 
-    function area() {
+    const area = () => {
         dispatch({ type: 'area' })
     }
 
-    function undo() {
+    const undo = () => {
         dispatch({ type: 'undo' })
     }
 
@@ -36,7 +36,7 @@ const UseReducertest = () => {
     </>
 }
 
-function numberReducer(state, action) {
+const numberReducer = (state, action) => {
     switch (action.type) {
         case 'add':
             return [... state, state[state.length-1] + action.number]

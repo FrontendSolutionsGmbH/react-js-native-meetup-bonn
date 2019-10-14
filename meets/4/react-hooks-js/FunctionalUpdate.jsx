@@ -4,7 +4,7 @@
         const id = setInterval(() => {
             setCount(count + 1)
         }, 1000)
-        return () => clearInterval(id);
-    }, []);
+        return () => clearInterval(id)
+    }, [])
     return <h1>{count}</h1>
 }
