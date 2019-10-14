@@ -4,10 +4,10 @@
 
     return <>
         <p>Counter A clicked {countA} times</p>
-        <button onClick={() => setCountA(countA + 1)}
+        <Button onClick={() => setCountA(countA + 1)}
                 text="Counter A"/>
         <p>Counter B clicked {countB} times</p>
-        <button onClick={() => setCountB(countB + 1)}
+        <Button onClick={() => setCountB(countB + 1)}
                 text="Counter B"/>
     </>
 }

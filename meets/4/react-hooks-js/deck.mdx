@@ -18,13 +18,6 @@ import UseCallback from '!raw-loader!./UseCallback.jsx'
 import ButtonMemoized from 'ButtonMemoized.jsx'
 import UseReducer from '!raw-loader!./UseReducer.jsx'
 import NumberReducer from 'NumberReducer.jsx'
-import UseEffecttest from 'UseEffecttest.jsx'
-import CustomHooktest from 'CustomHooktest.jsx'
-import CustomHooktest2 from 'CustomHooktest2.jsx'
-import UseReducertest from 'UseReducertest.jsx'
-import UseReftest from 'UseReftest.jsx'
-import UseImperativeHandletest from 'UseImperativeHandletest.jsx'
-import UseCallbacktest from 'UseCallbacktest.jsx'
 
 export { swiss as theme } from '@mdx-deck/themes'
 
@@ -178,12 +171,6 @@ const NumberReducer = (state, action) => {
 
 ---
 
-<div>
-<UseReducertest />
-</div>
-
----
-
 # lazy initialization
 
 ```jsx
@@ -282,30 +269,6 @@ const ComponentWithExpensiveComputation = () => {
 </ul>
 
 <Footer/>
-
----
-
-<div>
-<UseCallbacktest />
-</div>
-
----
-
-<div>
-<UseImperativeHandletest />
-</div>
-
----
-
-<div>
-<CustomHooktest />
-</div>
-
----
-
-<div>
-<CustomHooktest2 />
-</div>
 
 ---
 
