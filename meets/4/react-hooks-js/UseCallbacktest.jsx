@@ -6,15 +6,14 @@ const useCallbacktest = () => {
     const [countA, setCountA] = useState(0)
     const [countB, setCountB] = useState(0)
     const  setCountAMemoized = useCallback(() => setCountA(countA => (countA + 1)), [])
-    const  setCountBMemoized = useCallback(() => setCountB(countB => (countB + 1)), [])
+    const  setCountBMemoized = useCallback(() => setCountB(countB => (countB + countA)), [countA])
 
 
     return <>
-        <p>{'SUM IS ' + (countA + countB)}</p>
-        <p>Counter A clicked {countA} times</p>
-        <ButtonMemoized onClick={setCountAMemoized} text={'Counter A'} />
-        <p>Counter B clicked {countB} times</p>
-        <ButtonMemoized onClick={useCallback(() => setCountB(countB => (countB + 1)), [])} text={'Counter B'} />
+        <p>Counter A = {countA}</p>
+        <ButtonMemoized onClick={setCountAMemoized} text={'+ 1'} />
+        <p>Counter B = {countB}</p>
+        <ButtonMemoized onClick={setCountBMemoized} text={'+ Counter A'} />
     </>
 }
 

@@ -7,7 +7,10 @@
     return (
         <>
             <WrappedRefComponent ref={componentRef} />
-            <button onClick={onButtonClick} style={{height: '50px', width: '100px'}}>Focus</button>
+            <button onClick={onButtonClick}
+                    style={{height: '50px', width: '100px'}}>
+                Focus
+            </button>
         </>
     )
 }

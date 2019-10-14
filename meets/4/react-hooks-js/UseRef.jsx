@@ -6,8 +6,10 @@
     }
     return (
         <>
-            <input ref={inputRef} type="color" value="#e66465" style={{height: '50px', width: '100px'}}/>
-            <button onClick={onButtonClick} style={{height: '50px', width: '100px'}}>Focus</button>
+            <input ref={inputRef} type="color" value="#e66465"
+                   style={{height: '50px', width: '100px'}}/>
+            <Button onClick={onButtonClick}
+                    text="Focus"/>
         </>
     )
 }

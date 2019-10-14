@@ -1,8 +1,8 @@
-import { Head, Image, Notes, Appear, Steps } from 'mdx-deck';
-import Counter from './Counter';
+import { Head, Image, Notes, Appear, Steps } from 'mdx-deck'
+import Counter from './Counter'
 import CustomHook from '!raw-loader!./CustomHook.jsx'
-import CustomLiveCode from './CustomLiveCode';
-import Footer from './Footer';
+import CustomLiveCode from './CustomLiveCode'
+import Footer from './Footer'
 import FunctionalUpdate from '!raw-loader!./FunctionalUpdate.jsx'
 import Lifecycles from '!raw-loader!./Lifecycles.jsx'
 import SetState from '!raw-loader!./SetState.jsx'
@@ -14,6 +14,8 @@ import UseRef from '!raw-loader!./UseRef.jsx'
 import UseLayoutEffect from '!raw-loader!./UseLayoutEffect.jsx'
 import WrappedRefComponent from 'RefComponent.jsx'
 import UseImperativeHandle from '!raw-loader!./UseImperativeHandle.jsx'
+import UseCallback from '!raw-loader!./UseCallback.jsx'
+import ButtonMemoized from 'ButtonMemoized.jsx'
 import UseEffecttest from 'UseEffecttest.jsx'
 import CustomHooktest from 'CustomHooktest.jsx'
 import CustomHooktest2 from 'CustomHooktest2.jsx'
@@ -122,8 +124,8 @@ const useCustomHook = interval => {
         const id = setInterval(() => {
             setCount(count => count + 1)
         }, interval)
-        return () => clearInterval(id);
-    }, []);
+        return () => clearInterval(id)
+    }, [])
 
     return <p>{count}</p>
 }
@@ -188,6 +190,22 @@ export default forwardRef(RefComponent)
 ---
 
 <CustomLiveCode title={'useImperativeHandle'} code={UseImperativeHandle} scope={{WrappedRefComponent}}/>
+
+---
+
+# memoized button
+
+```jsx
+const ButtonMemoized = React.memo(
+    ({onClick, text}) => <button onClick={onClick}>{text}</button>
+)
+
+export default ButtonMemoized
+```
+
+---
+
+<CustomLiveCode title={'useCallback'} code={UseCallback} scope={{ButtonMemoized}}/>
 
 ---
 
