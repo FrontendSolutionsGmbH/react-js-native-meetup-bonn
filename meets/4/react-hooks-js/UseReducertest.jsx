@@ -21,16 +21,16 @@ const UseReducertest = () => {
 
     return <>
         <p>Number: {number[number.length-1]}</p>
-        <button onClick={() => add(1)}>
+        <button onClick={() => add(1)} style={{height: '50px', width: '100px'}}>
             +1
         </button>
-        <button onClick={() => circumference()}>
+        <button onClick={() => circumference()} style={{height: '50px', width: '100px'}}>
             CIRC
         </button>
-        <button onClick={() => area()}>
+        <button onClick={() => area()} style={{height: '50px', width: '100px'}}>
             AREA
         </button>
-        <button onClick={() => undo()}>
+        <button onClick={() => undo()} style={{height: '50px', width: '100px'}}>
             UNDO
         </button>
     </>

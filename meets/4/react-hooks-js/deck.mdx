@@ -10,10 +10,17 @@ import UseEffect from '!raw-loader!./UseEffect.jsx'
 import UseEffectParameters from '!raw-loader!./UseEffectParameters.jsx'
 import UseState from '!raw-loader!./UseState.jsx'
 import useCustomHook from 'UseCustomHook.jsx'
+import UseRef from '!raw-loader!./UseRef.jsx'
+import UseLayoutEffect from '!raw-loader!./UseLayoutEffect.jsx'
+import WrappedRefComponent from 'RefComponent.jsx'
+import UseImperativeHandle from '!raw-loader!./UseImperativeHandle.jsx'
 import UseEffecttest from 'UseEffecttest.jsx'
 import CustomHooktest from 'CustomHooktest.jsx'
 import CustomHooktest2 from 'CustomHooktest2.jsx'
 import UseReducertest from 'UseReducertest.jsx'
+import UseReftest from 'UseReftest.jsx'
+import UseImperativeHandletest from 'UseImperativeHandletest.jsx'
+import UseCallbacktest from 'UseCallbacktest.jsx'
 
 export { swiss as theme } from '@mdx-deck/themes'
 
@@ -142,13 +149,56 @@ const UseStateWithLazyInitialization = () => {
   // ...
 }
 
-const UseRenderWithLazyInitialization = () => {
-  const [state, setState] = useState(initFunction,initParameter)
+const UseReducerWithLazyInitialization = () => {
+  const [state, setState] = useReducer(reducer, initParameter, initFunction)
   // ...
 }
 ```
+
+---
+
+<CustomLiveCode title={'useRef'} code={UseRef}/>
+
+---
+
+<CustomLiveCode title={'useLayoutEffect'} code={UseLayoutEffect}/>
+
+---
+
+# wrapped ref component
+
+```jsx
+const RefComponent = (props, ref) => {
+    const inputRef = useRef(null)
+    useImperativeHandle(ref, () => ({
+        focus: () => {
+            inputRef.current.focus()
+        }
+    }))
+    return (
+        <>
+            <input ref={inputRef} type="color" value="#e66465" />
+        </>
+    )
+}
+
+export default forwardRef(RefComponent)
+```
+
+---
+
+<CustomLiveCode title={'useImperativeHandle'} code={UseImperativeHandle} scope={{WrappedRefComponent}}/>
+
+---
+
 <div>
-<LazyInitialization />
+<UseCallbacktest />
+</div>
+
+---
+
+<div>
+<UseImperativeHandletest />
 </div>
 
 ---
