@@ -8,7 +8,7 @@ const useCustomHook = interval => {
             setCount(count => count + 1)
         }, interval)
         return () => clearInterval(id)
-    }, [])
+    }, [interval])
 
     return count
 }

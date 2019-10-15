@@ -35,7 +35,7 @@ Torsten Stelljes
 
 ---
 
-# What are hooks good for?
+# What are hooks?
 
 <ul>
 <Appear>
@@ -66,13 +66,6 @@ Torsten Stelljes
 ---
 
 <CustomLiveCode title={'life cycles'} code={Lifecycles} />
-
----
-
-<Image
-  src='hook-flow.png'
-  size='contain'
-/>
 
 ---
 
@@ -159,7 +152,7 @@ const useCustomHook = interval => {
             setCount(count => count + 1)
         }, interval)
         return () => clearInterval(id)
-    }, [])
+    }, [interval])
 
     return <p>{count}</p>
 }
@@ -183,11 +176,11 @@ const useCustomHook = interval => {
 const NumberReducer = (state, action) => {
     switch (action.type) {
         case 'add':
-            return [... state, state[state.length-1] + action.number]
+            return [...state, state[state.length-1] + action.number]
         case 'circumference':
-            return [... state, 2 * state[state.length-1] * Math.PI]
+            return [...state, 2 * state[state.length-1] * Math.PI]
         case 'area':
-            return [... state, Math.pow(state[state.length-1],2) * Math.PI]
+            return [...state, Math.pow(state[state.length-1],2) * Math.PI]
         case 'undo':
             return [...state.slice(0,state.length-1)]
         default:
