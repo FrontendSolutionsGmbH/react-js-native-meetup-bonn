@@ -1,4 +1,4 @@
-import { Head, Image, Notes, Appear, Steps } from 'mdx-deck'
+import {Head, Image, Appear} from 'mdx-deck'
 import Counter from './Counter'
 import CustomHook from '!raw-loader!./CustomHook.jsx'
 import CustomLiveCode from './CustomLiveCode'
@@ -87,27 +87,6 @@ Torsten Stelljes
 
 ---
 
-# subscription with useEffect
-
-```jsx
-import React, {useEffect} from 'react'
-
-const ComponentWithSubscription = () => {
-  // ...
-  useEffect(() => {
-    subscribeToSomething(/*...*/)
-    return () => {
-      unsubscribeFromSomething(/*...*/)
-    }
-  })
-  // ...
-}
-```
-
-<Footer/>
-
----
-
 # subscription with life cycles
 
 ```jsx
@@ -125,6 +104,27 @@ class ComponentWithSubscription extends React.Component {
   componentDidUnmount() {
     unsubscribeFromSomething(/*...*/)
   }
+  // ...
+}
+```
+
+<Footer/>
+
+---
+
+# subscription with useEffect
+
+```jsx
+import React, {useEffect} from 'react'
+
+const ComponentWithSubscription = () => {
+  // ...
+  useEffect(() => {
+    subscribeToSomething(/*...*/)
+    return () => {
+      unsubscribeFromSomething(/*...*/)
+    }
+  })
   // ...
 }
 ```

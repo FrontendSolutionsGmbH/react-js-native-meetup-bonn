@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 export default ({initialCount}) => {
     const [count, setCount] = useState(initialCount)

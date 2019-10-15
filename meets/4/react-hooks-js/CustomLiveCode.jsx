@@ -1,5 +1,5 @@
-import { LiveCode } from 'mdx-deck-live-code'
-import { Component, forwardRef, useCallback, useEffect, useImperativeHandle, useLayoutEffect, useReducer, useRef, useState } from 'react'
+import {LiveCode} from 'mdx-deck-live-code'
+import {Component, forwardRef, useCallback, useEffect, useImperativeHandle, useLayoutEffect, useReducer, useRef, useState} from 'react'
 import Button from 'Button.jsx'
 import Input from 'Input.jsx'
 
@@ -13,7 +13,7 @@ const CustomLiveCode = ({code, title, scope}) => <div onKeyDown={handleOnKeyDown
         size="large"
         code={code}
         providerProps={{scope: {Button, Input, Component, forwardRef, useCallback, useEffect, useImperativeHandle, useLayoutEffect, useReducer, useRef, useState, ...scope}}}
-        editorProps={{ style: { fontSize: '0.5em', background: '#001628' } }}
+        editorProps={{style: {fontSize: '0.5em', background: '#001628'}}}
     />
 </div>
 

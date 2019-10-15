@@ -8,11 +8,11 @@ class SetState extends Component {
         return  <>
             <p>Counter A clicked {this.state.countA} times</p>
             <Button onClick={() => this.setState(
-                {  countA: this.state.countA + 1 }
+                {countA: this.state.countA + 1}
                 )} text="Counter A"/>
             <p>Counter B clicked {this.state.countB} times</p>
             <Button onClick={() => this.setState(
-                {  countB: this.state.countB + 1 }
+                {countB: this.state.countB + 1}
                 )} text="Counter A"/>
         </>
     }
