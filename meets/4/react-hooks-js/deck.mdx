@@ -98,8 +98,8 @@ class ComponentWithSubscription extends React.Component {
     subscribeToSomething(/*...*/)
   }
   componentDidUpdate() {
-    subscribeToSomething(/*...*/)
     unsubscribeFromSomething(/*...*/)
+    subscribeToSomething(/*...*/)
   }
   componentDidUnmount() {
     unsubscribeFromSomething(/*...*/)
@@ -171,7 +171,7 @@ const useCustomHook = interval => {
         return () => clearInterval(id)
     }, [interval])
 
-    return <p>{count}</p>
+    return {count}
 }
 ```
 
