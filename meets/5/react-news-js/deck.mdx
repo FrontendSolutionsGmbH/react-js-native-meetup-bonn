@@ -14,7 +14,7 @@ import React from 'react'
 # React.JS News
 
 
-## #3&nbsp;-&nbsp;03.09.2019
+## #5&nbsp;-&nbsp;03.12.2019
 
 <img className="meetup-title-logo" src="meetup-logo.png"/>
 
@@ -24,10 +24,10 @@ import React from 'react'
 
 # Alexander Thurn
 
-CEO Frontend Solutions GmbH
+Geschäftsführer
+* Frontend Solutions GmbH
 * Developer since 1996
 * Meetup organizer
-* React.JS fan
 
 <Footer></Footer>
 
@@ -35,29 +35,16 @@ CEO Frontend Solutions GmbH
 <img src="frontend-solutions-logo.svg"/>
 
 Serviceprovider for
-  * Frontend
-  * Backend
-  * Onsite
-  * Offsite
+  * Frontend / Backend
+  * Onsite / Offsite
+  * Person / Team
 
 <Footer></Footer>
 
----
-
-<img src="frontend-solutions-logo.svg"/>
-
-Technologies
-  * React.JS
-  * Golang / Java
-  * Docker
-  * Agile Methods
-
-<Footer></Footer>
 
 ---
 
-
-# Speaker wanted !
+# Speaker wanted
 
 <iframe style={{width:"100%", height: "100%", minHeight: "500px"}} src="//docs.google.com/spreadsheets/d/1X9JjPyYrt_v1z41boskj0vlh7KOBUmtG7phJJcyv21A/edit#gid=0&range=A24"></iframe>
 <Footer></Footer>
@@ -80,36 +67,153 @@ Testing ReactJS with Robotframework - Anke Dick
 
 # React.JS News
 
+* React 16.6
+    * memo
+    * lazy
+    * contextType
+
+
+* React 16.8
+    * Hooks
+
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a><br /><a href="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html">reactjs.org/blog/2019/02/06/react-v16.8.0.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# memo
+
+
+
+* class components
+    * PureComponent
+        * shouldComponentUpdate
+
+
+* functional components
+
+    ```jsx
+    const MyComponent = React.memo(function MyComponent(props) {
+      /* only rerenders if props change */
+    });
+    ```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# memo
+
+
+* custom comparison
+
+    ```jsx
+        React.memo(Component, [areEqual(prevProps, nextProps)]);
+    ```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+
+
+# lazy
+
+```jsx
+import React, {lazy, Suspense} from 'react';
+const OtherComponent = lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <OtherComponent />
+        </Suspense>
+    );
+}
+```
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+* 16.3 context api
+    * provider/consumer based
+
+```jsx
+const ThemeContext = React.createContext('light');
+
+class ThemedButton extends React.Component {
+  render() {
+    return (
+      <ThemeContext.Consumer>
+              {theme => <Button theme={theme} />}
+      </ThemeContext.Consumer>
+      ...
+```
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+* 16.6 context api more convenient
+    * direct access
+
+```jsx
+const ThemeContext = React.createContext('light');
+
+class MyClass extends React.Component {
+  static contextType = ThemeContext;
+
+  componentDidMount() {
+    let theme = this.context;
+  }
+
+  render() {
+    let theme = this.context;
+  }
+}
+```
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
 <Footer></Footer>
 
 ---
 
 # React.JS News
 
-* React 16.6
-    * lazy
-    * memo
-    * contextType
-
-* React 16.8
-    * Hooks
 
 * React 16.9
     * act()
     * programmatic React Profiler
-    * Deprecations
-        * Unsafe Lifecycle Methods
-        * Unsafe javascript urls
 
 <small><a href="https://reactjs.org/blog/2019/08/08/react-v16.9.0.html">reactjs.org/blog/2019/08/08/react-v16.9.0.html</a></small>
 
----
-
 <Footer></Footer>
 
-# Thank you for your attention
+---
 
-By [@Alexander Thurn](https://froso.de)
+# Thank you
+
+[@Alexander Thurn](https://froso.de)
 
 Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
 
