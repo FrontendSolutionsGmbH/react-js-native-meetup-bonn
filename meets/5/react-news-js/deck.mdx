@@ -1,0 +1,347 @@
+import { Head } from 'mdx-deck';
+import Footer from './Footer';
+export { swiss as theme } from 'mdx-deck/themes'
+import './slides.css'
+
+import React from 'react'
+
+<Head>
+	<title>React.JS News</title>
+</Head>
+
+# React.JS News
+
+
+## #5&nbsp;-&nbsp;03.12.2019
+
+<img className="meetup-title-logo" src="meetup-logo.png"/>
+
+<Footer></Footer>
+
+---
+
+# About me
+
+<img src="misc/alex.jpeg" style={{position: "absolute", left: "50%", top: "30%"}}/>
+
+* Alexander Thurn
+* Developer since 1996
+* Meetup organizer
+* Geschäftsführer
+    * Frontend Solutions GmbH
+
+<Footer></Footer>
+
+---
+<img src="frontend-solutions-logo.svg"/>
+
+<img src="misc/team-weihnachten.jpeg" style={{position: "absolute", left: "50%", top: "50%", width:"40%"}}/>
+
+Serviceprovider (Dienstleister)
+  * Frontend / Backend
+  * Onsite / Offsite
+  * Person / Team
+  * Bonn / Cologne
+
+---
+
+# #5 Meetup Topics
+
+React News (Javascript + Native)
+
+Visual Regression Testing - Matthias Richter
+
+Testing ReactJS with Robotframework - Anke Dick
+
+
+<Footer></Footer>
+
+---
+
+# React.JS News
+
+* React 16.6
+* React 16.8
+* React 16.9
+
+<Footer></Footer>
+
+
+---
+
+# React.JS News
+
+* React 16.6
+    * memo
+    * lazy
+    * contextType
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# memo
+
+* React does not manipulate the dom tree if the output of render() stays the same
+* Sometimeves even a call of render() is expensive
+    * Save time by skipping render()
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# memo
+
+
+* class components
+    * PureComponent
+        * shouldComponentUpdate
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+
+# memo
+
+* functional components
+
+    ```jsx
+    let MemoizedComponent = React.memo(function MyComponent(props) {
+      /* only rerenders if props change */
+      console.log('call')
+    });
+
+    <MemoizedComponent speed="up"/>
+    <MemoizedComponent speed="up"/>
+    ```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# memo
+
+
+* custom comparison
+
+    ```jsx
+        React.memo(MyComponent, [areEqual(prevProps, nextProps)]);
+    ```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+
+# lazy + Suspense
+
+```jsx
+import React, {lazy, Suspense} from 'react';
+const OtherComponent = lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <OtherComponent />
+        </Suspense>
+    );
+}
+```
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+* 16.3 context api
+    * ```<Provider /> <Consumer />``` based
+
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+```jsx
+const ThemeContext = React.createContext('light');
+
+class ThemedButton extends React.Component {
+  render() {
+    return (
+      <ThemeContext.Consumer>
+              {theme => <Button theme={theme} />}
+      </ThemeContext.Consumer>
+      ...
+```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+* 16.6 makes context api convenient
+    * direct access
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# contextType
+
+```jsx
+const ThemeContext = React.createContext('light');
+
+class MyClass extends React.Component {
+  static contextType = ThemeContext;
+
+  componentDidMount() {
+    let theme = this.context;
+  }
+
+  render() {
+    let theme = this.context;
+  }
+}
+```
+
+<small><a href="https://reactjs.org/blog/2018/10/23/react-v-16-6.html">reactjs.org/blog/2018/10/23/react-v-16-6.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# React.JS News
+
+* React 16.8
+    * Hooks
+    * <a href="https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn/tree/master/meets/4/react-hooks-js">React Meetup #4 - Torsten Stelljes</a>
+
+<small><a href="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html">reactjs.org/blog/2019/02/06/react-v16.8.0.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# React.JS News
+
+
+* React 16.9
+    * Programmatic React Profiler
+    * act()
+
+<small><a href="https://reactjs.org/blog/2019/08/08/react-v16.9.0.html">reactjs.org/blog/2019/08/08/react-v16.9.0.html</a></small>
+
+<Footer></Footer>
+
+---
+
+
+
+# Programmatic React Profiler
+
+* 16.5 React Profiler in Dev Tools
+* 16.9 ```<React.Profiler />```
+
+<small><a href="https://reactjs.org/blog/2019/08/08/react-v16.9.0.html">reactjs.org/blog/2019/08/08/react-v16.9.0.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# Programmatic React Profiler
+
+```jsx
+render(
+    <App>
+        <Profiler id="Navigation" onRender={callback}>
+            <Navigation {...props} />
+        </Profiler>
+
+        <Profiler id="Main" onRender={callback}>
+            <Main {...props} />
+        </Profiler>
+    </App>
+);
+```
+
+
+<small><a href="https://reactjs.org/blog/2019/08/08/react-v16.9.0.html">reactjs.org/blog/2019/08/08/react-v16.9.0.html</a></small>
+
+<Footer></Footer>
+
+
+---
+
+
+# act()
+
+* 16.9 UI test helper (16.8 only sync)
+* "Arrange-Act-Assert"
+
+```jsx
+// arrange conditions
+act(() => {
+  // render components
+});
+// make assertions
+
+```
+
+
+<small><a href="https://reactjs.org/blog/2019/08/08/react-v16.9.0.html">reactjs.org/blog/2019/08/08/react-v16.9.0.html</a></small>
+
+<Footer></Footer>
+
+---
+
+# act()
+
+* Simulates "real" component behaviour
+
+```jsx
+let container = document.createElement("div");
+
+act(() => {
+    render(<Hello />, container);
+});
+
+expect(container.textContent).toBe("Voll geil");
+```
+
+
+<Footer></Footer>
+
+---
+
+
+# Thank you
+
+[@Alexander Thurn](https://froso.de)
+
+Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
+
+<Footer></Footer>
