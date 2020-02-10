@@ -1,0 +1,216 @@
+import { Head } from 'mdx-deck';
+import Footer from './Footer';
+export { swiss as theme } from 'mdx-deck/themes'
+import './slides.css'
+
+import React from 'react'
+
+<Head>
+   <title>Routing in React</title>
+</Head>
+
+# react-router
+### Declarative routing for React.
+<br />
+
+### #5&nbsp;-&nbsp;11.02.2019
+
+<img className="meetup-title-logo" src="meetup-logo.png"/>
+
+<Footer></Footer>
+
+---
+
+# About me
+
+<img src="misc/Monika.jpeg" style={{position: "absolute", left: "60%", top: "20%"}}/>
+
+* Monika Małolepsza
+* In Frontend Solutions since 2018
+* Meetup organizer
+
+
+<Footer></Footer>
+
+---
+# Topics
+
+* Routing - What is it exactly?
+* Routing in React JS
+* Simple routing with react-router
+* Hash routes vs Browser routes
+* Nested Routes in react-router
+
+<Footer></Footer>
+
+---
+
+# What is a route?
+
+* Route provides a path to the component that we want to render:
+
+ ```/home/about-me```
+
+* Routing is organizing the structure of the whole application.
+
+<Footer></Footer>
+
+---
+
+<img src="misc/URL.jpeg" style={{position: "absolute", left: "0.1%", top: "11%"}}/>
+
+
+<Footer></Footer>
+
+---
+
+# Routing in SPA vs MPA
+
+What is the difference between Single Page Apps and Multi Page Apps?
+* SPA dynamically rewrites the current page
+* MPA requires re-render on every page change
+* SPA loads only once
+
+
+<Footer></Footer>
+
+---
+
+# Single page routing with pure React
+
+* simple example
+
+<Footer></Footer>
+
+---
+
+
+# Why not just use pure React?
+
+* Difficult to extract the parameters of multiple queries
+* Prone to bugs/errors.
+
+And well...
+
+<Footer></Footer>
+
+---
+
+# Why not just use pure React?
+
+* Difficult to extract the parameters of multiple queries
+* Prone to bugs/errors.
+
+And well...
+
+ ## react-router can do it for us! :sunglasses:
+
+
+<Footer></Footer>
+
+---
+
+
+# react-router
+
+React Router is a standard routing library in React
+
+* Developed by Michael Jackson and Ryan Florence
+* Regularly maintained
+* Big community on Github
+* Declarative nature
+* Compatible with React Native and Redux
+
+<Footer></Footer>
+
+---
+
+# react-router
+
+* Basic package: react-router
+* For the browser apps: react-router-dom
+* For mobile: react-router-native
+
+       * $ npm install --save react-router
+
+       * yarn add react-router-dom
+
+
+<Footer></Footer>
+
+---
+
+# react-router
+* Routes are treated just like components
+```
+const App = () => (
+  <div>
+    <nav>
+      <Link to="/dashboard">Dashboard</Link>
+    </nav>
+    <div>
+      <Route path="/dashboard" component={Dashboard} />
+    </div>
+  </div>
+);
+```
+
+<Footer></Footer>
+
+---
+
+# Browser Router
+
+  * uses history API,
+  * it's unavailable for legacy browsers (IE 9)
+  * looks cleaner: `example.com/react/route`, but
+  * needs to be backed by web server.
+
+<Footer></Footer>
+
+---
+
+#  Hash Router
+
+  * uses URL hash, it puts no limitations on supported browsers or web server
+  * doesn't look so nice: `example.com/#/react/route`, but
+  * stays independent from client-side routing.
+
+<Footer></Footer>
+
+---
+
+# memo
+
+* While using `BrowserRouter` or `Router`, it will work fine on our node server, but:
+  * To make it work also after deployment we have to configure __.htaccess__ file
+  * It can be used to alter the configuration of the Apache Web Server
+
+* `HASH Routing (#)` will not lead to server request.
+  * It won't require additional config!
+
+<Footer></Footer>
+
+---
+
+# So.. How do I nest the route?
+* The same as a simple ```<div>```
+* Route is just a component, so to nest a Route or a div - you do it the same way!
+
+
+<small><a href="https://reacttraining.com/react-router/core/guides/philosophy">React Training/React Router - Philosophy </a></small>
+
+
+<Footer></Footer>
+
+---
+
+
+# Thank you
+
+[@Monika Małolepsza]
+(http://froso.de)
+
+* Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
+* Code [Github](https://github.com/MonikaMalolepsza/react-router-examples)
+<Footer></Footer>

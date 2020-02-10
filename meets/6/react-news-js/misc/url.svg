@@ -1,0 +1,29 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="302" width="702" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path stroke="#000" transform="rotate(167.74742126464844 213.79995727539062,83.54226684570312) " id="svg_6" d="m198.548745,83.474471l15.251213,-28.1822l15.251213,28.1822l-7.625607,0l0,28.3178l-15.251213,0l0,-28.3178l-7.625607,0z" stroke-width="1.5" fill="#fff"/>
+  <path stroke="#000" transform="rotate(-162.51014709472656 447.54971313476557,83.04316711425784) " id="svg_7" d="m431.5488,82.975368l16.000912,-28.1822l16.000912,28.1822l-8.000456,0l0,28.3178l-16.000912,0l0,-28.3178l-8.000456,0z" stroke-width="1.5" fill="#fff"/>
+  <path stroke="#000" transform="rotate(164.46751403808594 53.79815673828125,83.03895568847655) " id="svg_11" d="m41.048147,82.472054l12.984091,-27.6834l12.515925,28.1822l-6.257962,0l0,28.3178l-12.749868,0.0006l0,-28.3178l-6.257962,0z" stroke-width="1.5" fill="#fff"/>
+  <rect stroke="#000" transform="rotate(0.02575659193098545 349.7508850096989,155.23127746582557) " id="svg_15" height="76.000224" width="673.004032" y="117.231167" x="13.248884" stroke-opacity="null" stroke-width="1.5" fill="#d4d8db"/>
+  <text stroke="#000" transform="matrix(1.1350680214552342,0,0,1.1557822520391536,-46.688230704714684,-92.71569914646636) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_16" y="225.530041" x="376.934578" stroke-opacity="null" stroke-width="0" fill="#005fbf">/index.html</text>
+  <text stroke="#000" transform="matrix(1.2935225652181332,0,0,1.2677888025651451,-7.663682948766656,-129.71096889857017) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_17" y="235.962697" x="23.207359" stroke-opacity="null" stroke-width="0" fill="#ff7f00">http://</text>
+  <text stroke="#000" transform="matrix(1.254011345932116,0,0,1.2934136362636066,-5.1547992408637064,-20.625472395421923) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_18" y="145.959999" x="88.047171" stroke-opacity="null" stroke-width="0" fill="#bf0000">www.froso.de</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_19" y="44.726563" x="16.75" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">protocol</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_21" y="45.726563" x="166.75" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">hostname</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_22" y="45.226563" x="426.25" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">absolute path</text>
+  <text stroke="#000" transform="matrix(1.2539073593644186,0,0,1.1317328487524956,-78.7978516180068,-35.1986980033592) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_26" y="180.290727" x="296.334493" stroke-opacity="null" stroke-width="0" fill="#bf00bf">/about</text>
+  <text stroke="#000" transform="matrix(1.1828350533143634,0,0,1.2165460593122646,-93.54770966090187,-52.23175761555636) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_27" y="181.266069" x="513.911602" stroke-opacity="null" stroke-width="0" fill="#5fbf00">?user=mm</text>
+  <path stroke="#000" transform="rotate(22.124258041381836 564.2999267578124,225.0422668457031) " id="svg_29" d="m549.048745,224.974471l15.251213,-28.1822l15.251214,28.1822l-7.625607,0l0,28.3178l-15.251213,0l0,-28.3178l-7.625607,0z" stroke-width="1.5" fill="#fff"/>
+  <path stroke="#000" transform="rotate(23.36366081237793 318.29995727539057,224.04226684570315) " id="svg_30" d="m303.048745,223.974471l15.251213,-28.1822l15.251214,28.1822l-7.625607,0l0,28.3178l-15.251213,0l0,-28.3178l-7.625607,0z" stroke-width="1.5" fill="#fff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_31" y="274" x="233.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">relative path</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_32" y="275" x="500.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">queries</text>
+ </g>
+</svg>
