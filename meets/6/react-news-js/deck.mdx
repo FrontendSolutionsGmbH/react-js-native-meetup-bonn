@@ -78,15 +78,6 @@ What is the difference between Single Page Apps and Multi Page Apps?
 
 ---
 
-# Single page routing with pure React
-
-* simple example
-
-<Footer></Footer>
-
----
-
-
 # Why not just use pure React?
 
 * Difficult to extract the parameters of multiple queries
@@ -115,7 +106,7 @@ And well...
 
 # react-router
 
-React Router is a standard routing library in React
+React Router is a routing library in React
 
 * Developed by Michael Jackson and Ryan Florence
 * Regularly maintained
@@ -161,22 +152,25 @@ const App = () => (
 
 ---
 
-# Browser Router
+#  HashRouter
 
-  * uses history API,
-  * it's unavailable for legacy browsers (IE 9)
-  * looks cleaner: `example.com/react/route`, but
-  * needs to be backed by web server.
+  * uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL
+  * doesn't look so nice: `example.com/#/react/route`, but
+  * works without additional config
+  * you can bookmark links
 
 <Footer></Footer>
 
 ---
 
-#  Hash Router
+# BrowserRouter
 
-  * uses URL hash, it puts no limitations on supported browsers or web server
-  * doesn't look so nice: `example.com/#/react/route`, but
-  * stays independent from client-side routing.
+  * uses the HTML5 history API (pushState, replaceState and the popstate event) <br/>
+  to keep your UI in sync with the URL.
+  * it's unavailable for legacy browsers (IE 9)
+  * looks cleaner: `example.com/react/route`, but
+  * needs extra configuration
+
 
 <Footer></Footer>
 
