@@ -55,6 +55,7 @@ React Router and Server-Side Rendering with Next.js
 
 * [React Router (slides) - Monika Malolepsza](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn/tree/master/meets/6/react-router/deck.mdx)
    * To run the presentation: cd meets/6/react-router/ && npm install && npm start 
+* [React Router (examples)- Monika Malolepsza](https://github.com/MonikaMalolepsza/react-router-examples)   
 * Server-Side Rendering with Next.js - Christoph Jerolimov 
     
 
