@@ -1,0 +1,327 @@
+import {Head, Image, Appear} from 'mdx-deck'
+import Counter from './Counter'
+import CustomHook from '!raw-loader!./CustomHook.jsx'
+import CustomLiveCode from './CustomLiveCode'
+import Footer from './Footer'
+import FunctionalUpdate from '!raw-loader!./FunctionalUpdate.jsx'
+import Lifecycles from '!raw-loader!./Lifecycles.jsx'
+import SetState from '!raw-loader!./SetState.jsx'
+import UseEffect from '!raw-loader!./UseEffect.jsx'
+import UseEffectParameters from '!raw-loader!./UseEffectParameters.jsx'
+import UseState from '!raw-loader!./UseState.jsx'
+import useCustomHook from 'UseCustomHook.jsx'
+import UseRef from '!raw-loader!./UseRef.jsx'
+import UseLayoutEffect from '!raw-loader!./UseLayoutEffect.jsx'
+import WrappedRefComponent from 'RefComponent.jsx'
+import UseImperativeHandle from '!raw-loader!./UseImperativeHandle.jsx'
+import UseCallback from '!raw-loader!./UseCallback.jsx'
+import ButtonMemoized from 'ButtonMemoized.jsx'
+import UseReducer from '!raw-loader!./UseReducer.jsx'
+import NumberReducer from 'NumberReducer.jsx'
+
+export { swiss as theme } from '@mdx-deck/themes'
+
+<Head>
+	<title>React Hooks</title>
+</Head>
+
+<Image
+  src='thehook.jpg' width='20vw' height='20vh' size='contain'/>
+
+# React Hooks
+
+15.10.2019
+
+Torsten Stelljes
+
+<Footer/>
+
+---
+
+# What are hooks?
+
+<ul>
+<Appear>
+<li>Functional components behave like class components now</li>
+<li>Extract stateful logic from a component and reuse it</li>
+<li>Keep logic together instead of splitting it based on lifecycles</li>
+<li>Hooks come with React 16.8 (Native 0.59) and are backwards-compatible</li>
+</Appear>
+</ul>
+
+<Footer/>
+
+---
+
+<Image
+  src='fighthook.jpg'
+  size='contain'
+/>
+
+---
+
+<CustomLiveCode title={'setState'} code={SetState} />
+
+---
+
+<CustomLiveCode title={'useState'} code={UseState} />
+
+---
+
+<Image
+  src='lifecycles.png'
+  size='contain'
+/>
+
+---
+
+<CustomLiveCode title={'life cycles'} code={Lifecycles} />
+
+---
+
+<CustomLiveCode title={'useEffect'} code={UseEffect} />
+
+---
+
+<CustomLiveCode title={'useEffect dependencies'} code={UseEffectParameters} />
+
+---
+
+# subscription with life cycles
+
+```jsx
+import React from 'react'
+
+class ComponentWithSubscription extends React.Component {
+  // ...
+  componentDidMount() {
+    subscribeToSomething(/*...*/)
+  }
+  componentDidUpdate() {
+    unsubscribeFromSomething(/*...*/)
+    subscribeToSomething(/*...*/)
+  }
+  componentDidUnmount() {
+    unsubscribeFromSomething(/*...*/)
+  }
+  // ...
+}
+```
+
+<Footer/>
+
+---
+
+# subscription with useEffect
+
+```jsx
+import React, {useEffect} from 'react'
+
+const ComponentWithSubscription = () => {
+  // ...
+  useEffect(() => {
+    subscribeToSomething(/*...*/)
+    return () => {
+      unsubscribeFromSomething(/*...*/)
+    }
+  })
+  // ...
+}
+```
+
+<Footer/>
+
+---
+
+<CustomLiveCode title={'functional update'} code={FunctionalUpdate} />
+
+---
+
+# hook rules
+
+<ul>
+<Appear>
+<li>Only call hooks from functional components or custom hooks</li>
+<li>Only call hooks at the top level</li>
+<li>Hooks always start with 'use'</li>
+</Appear>
+</ul>
+
+<Footer/>
+
+---
+
+<Image
+  src='scorpionhook.gif'
+  size='contain'
+/>
+
+---
+
+# a custom hook to be used
+
+```jsx
+const useCustomHook = interval => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        const id = setInterval(() => {
+            setCount(count => count + 1)
+        }, interval)
+        return () => clearInterval(id)
+    }, [interval])
+
+    return {count}
+}
+```
+
+<Footer/>
+
+---
+
+<CustomLiveCode title={'custom hooks'} code={CustomHook} scope={{useCustomHook}}/>
+
+---
+
+<CustomLiveCode title={'useReducer'} code={UseReducer} scope={{NumberReducer}}/>
+
+---
+
+# the number reducer
+
+```jsx
+const NumberReducer = (state, action) => {
+    switch (action.type) {
+        case 'add':
+            return [...state, state[state.length-1] + action.number]
+        case 'circumference':
+            return [...state, 2 * state[state.length-1] * Math.PI]
+        case 'area':
+            return [...state, Math.pow(state[state.length-1],2) * Math.PI]
+        case 'undo':
+            return [...state.slice(0,state.length-1)]
+        default:
+            return state
+    }
+}
+```
+
+<Footer/>
+
+---
+
+# lazy initialization
+
+```jsx
+const UseStateWithLazyInitialization = () => {
+  const [state, setState] = useState(initFunction)
+  // ...
+}
+
+const UseReducerWithLazyInitialization = () => {
+  const [state, setState] = useReducer(reducer, initParameter, initFunction)
+  // ...
+}
+```
+
+<Footer/>
+
+---
+
+<CustomLiveCode title={'useRef'} code={UseRef}/>
+
+---
+
+<CustomLiveCode title={'useLayoutEffect'} code={UseLayoutEffect}/>
+
+---
+
+<Image
+  src='hook-flow.png'
+  size='contain'
+/>
+
+---
+
+# wrapped ref component
+
+```jsx
+const RefComponent = (props, ref) => {
+    const inputRef = useRef(null)
+    useImperativeHandle(ref, () => ({
+        focus: () => {
+            inputRef.current.focus()
+        }
+    }))
+    return (
+        <>
+            <input ref={inputRef} type="color" value="#e66465" />
+        </>
+    )
+}
+export default forwardRef(RefComponent)
+```
+
+<Footer/>
+
+---
+
+<CustomLiveCode title={'useImperativeHandle'} code={UseImperativeHandle} scope={{WrappedRefComponent}}/>
+
+---
+
+# memoized button
+
+```jsx
+const ButtonMemoized = React.memo(
+    ({onClick, text}) => <button onClick={onClick}>{text}</button>
+)
+```
+
+<Footer/>
+
+---
+
+<CustomLiveCode title={'useCallback'} code={UseCallback} scope={{ButtonMemoized}}/>
+
+---
+
+# useMemo
+
+```jsx
+const ComponentWithExpensiveComputation = () => {
+    const [a, setA] = useState(0)
+    const [b, setB] = useState(0)
+
+    const computeExpensiveValue = x => {*/...*/}
+
+    const c = useMemo(() => computeExpensiveValue(b), [b])
+
+    return <p>{c}</p>
+}
+```
+
+<Footer/>
+
+---
+
+# further hooks
+
+<ul>
+<Appear>
+<li>useContext: get context from the closest context provider</li>
+<li>useDebugValue: display a label for custom hooks in React DevTools</li>
+</Appear>
+</ul>
+
+<Footer/>
+
+---
+
+# Thank you for your attention
+
+By [@Torsten Stelljes](https://froso.de)
+
+Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
+
+<Footer/>
