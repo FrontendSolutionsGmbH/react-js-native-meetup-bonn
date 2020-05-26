@@ -1,0 +1,20 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "pdf": "mdx-deck-export pdf deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mdx-deck/export": "^2",
+    "mdx-deck": "^2",
+    "mdx-deck-live-code": "^1",
+    "styled-components": "^4"
+  }
+}

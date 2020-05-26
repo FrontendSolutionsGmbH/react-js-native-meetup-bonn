@@ -1,0 +1,85 @@
+import { Head } from 'mdx-deck';
+import Footer from './Footer';
+export { swiss as theme } from 'mdx-deck/themes'
+import './slides.css'
+import { big } from 'mdx-deck/themes'
+import React from 'react'
+import Highlighter from 'react-syntax-highlighter'
+
+
+<Head>
+	<title>React.JS News</title>
+</Head>
+
+# React.JS Meetup Bonn
+
+
+## #7&nbsp;-&nbsp;27.05.2020
+
+
+
+
+<img className="meetup-title-logo" src="meetup-logo.png"/>
+
+<Footer></Footer>
+
+---
+
+
+# Schedule
+
+
+* ReactJS News c.Kleinhuis
+* RectNative News c.Jerolimov
+* Blitz.js s.Knott
+
+<Footer></Footer>
+
+---
+
+
+# React News #7
+
+- React v16.13.0 Immer noch aktuell
+    - Concurrent Mode / Suspense noch nicht freigegebebn
+
+
+<Footer></Footer>
+
+---
+
+
+# Sneak Preview
+
+* React React.JS Meetup Bonn #8
+ - facebookexperimental/Recoil
+
+```
+    import React from 'react'
+    import {atom, useRecoilState} from 'recoil'
+
+    const stateAtom = atom({
+      key: 'textState',
+      default: '',
+    })
+
+    function TextInput() {
+      const [value, setState] = useRecoilState(atom(stateAtom));
+      return (<div onClick={()=>setState(value+1)}>{value}</div>);
+    }
+
+```
+
+
+
+<Footer></Footer>
+
+---
+
+# Viel Spass
+
+By [@Alexander Thurn](https://froso.de)
+
+Slides [Github](https://github.com/FrontendSolutionsGmbH/react-js-native-meetup-bonn)
+
+<Footer></Footer>
